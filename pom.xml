@@ -28,7 +28,7 @@
 
   <artifactId>tomitribe-tio</artifactId>
   <packaging>jar</packaging>
-  <version>0.1</version>
+  <version>0.2-SNAPSHOT</version>
   <name>Tomitribe :: Tio (text i/o)</name>
 
   <scm>
