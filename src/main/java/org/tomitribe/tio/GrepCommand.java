@@ -25,6 +25,7 @@ import org.tomitribe.util.Join;
 import org.tomitribe.util.hash.XxHash64;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -36,14 +37,27 @@ import java.util.stream.Stream;
 
 public class GrepCommand {
 
+    public Stream<Match> grep(Pattern include, Pattern exclude, final Pattern regex, final Dir dir) {
+        return grep(include, exclude, Collections.EMPTY_LIST, regex, dir);
+    }
+
     @Command(value = "grep", interceptedBy = ColoredMatches.class)
     public Stream<Match> grep(@Option("include") Pattern include,
                               @Option("exclude") Pattern exclude,
-                              final Pattern regex, final Dir dir) {
+                              @Option("not") final List<Pattern> exceptions,
+                              final Pattern regex, final Dir dir
+    ) {
         final PatternMatcher matcher = PatternMatcher.from(regex);
 
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude)
                 .and(file -> GrepCommand.binaries.asPredicate().negate().test(file.getName()));
+
+        final Predicate<String> not = exceptions.stream()
+                .map(Pattern::asPredicate)
+                .map(Predicate::negate)
+                .reduce(Predicate::and)
+                .orElseGet(() -> s -> true);
+
 
         final Grep grep = Grep.builder()
                 .dir(dir)
@@ -54,8 +68,11 @@ public class GrepCommand {
         return dir.searchFiles()
                 .filter(Grep::excludeGitFiles)
                 .filter(fileFilter)
-                .flatMap(grep::file);
+                .flatMap(grep::file)
+                .filter(match -> not.test(match.getLine().getText()))
+                ;
     }
+
 
     /**
      * Search for files that contain the first pattern, if it does grep the
