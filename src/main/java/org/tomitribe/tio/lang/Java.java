@@ -56,7 +56,7 @@ public class Java {
     public static Java parse(final File file) {
         final String content = slurp(file);
 
-        final String package_ = Stream.of(content.split("\n"))
+        final String packag = Stream.of(content.split("\n"))
                 .filter(s -> s.startsWith("package "))
                 .map(Java::removePackage)
                 .findFirst()
@@ -71,7 +71,7 @@ public class Java {
                 .collect(Collectors.toList());
 
         return Java.builder()
-                .packageName(package_)
+                .packageName(packag)
                 .imports(imports)
                 .file(file)
                 .build();

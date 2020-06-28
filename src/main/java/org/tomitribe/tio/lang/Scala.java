@@ -31,6 +31,8 @@ import java.util.stream.Stream;
 
 public class Scala {
 
+    private Scala() {
+    }
 
     public static Java parse(final File file) {
         final Java java = Java.parse(file);

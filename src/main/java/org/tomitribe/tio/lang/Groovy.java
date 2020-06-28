@@ -29,6 +29,9 @@ import java.util.stream.Stream;
 
 public class Groovy {
 
+    private Groovy() {
+    }
+
     public static Java parse(final File file) {
         final Java java = Java.parse(file);
         final List<String> imports = java.getImports().stream()

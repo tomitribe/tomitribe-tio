@@ -27,6 +27,8 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class JvmLang {
+    private JvmLang() {
+    }
 
     public static Java parse(final File file) {
         final String extension = fileExtension(file);
