@@ -28,14 +28,14 @@
 
   <artifactId>tomitribe-tio</artifactId>
   <packaging>jar</packaging>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.4</version>
   <name>Tomitribe :: Tio (text i/o)</name>
 
   <scm>
     <connection>scm:git:git@github.com:tomitribe/tomitribe-tio.git</connection>
     <url>scm:git:git@github.com:tomitribe/tomitribe-tio.git</url>
     <developerConnection>scm:git:git@github.com:tomitribe/tomitribe-tio.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>tomitribe-tio-0.4</tag>
   </scm>
 
   <dependencies>
