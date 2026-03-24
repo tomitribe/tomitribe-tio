@@ -1,0 +1,1326 @@
+# org.apache.xbean.finder.AbstractFinder$Annotatable
+public class org.apache.xbean.finder.AbstractFinder$Annotatable
+  private final field annotations : java.util.List<org.apache.xbean.finder.AbstractFinder$AnnotationInfo>
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.reflect.AnnotatedElement element)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0)
+  public method getAnnotations() : void
+  private method getAnnotations(java.lang.reflect.AnnotatedElement element) : java.lang.annotation.Annotation[]
+
+# org.apache.xbean.finder.AbstractFinder$AnnotationInfo
+public class org.apache.xbean.finder.AbstractFinder$AnnotationInfo extends org.apache.xbean.finder.AbstractFinder$Annotatable
+implements org.apache.xbean.finder.AbstractFinder$Info
+  private final field name : java.lang.String
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.annotation.Annotation annotation)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.Class annotation)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.String name)
+  public method getName() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AbstractFinder$ClassInfo
+public class org.apache.xbean.finder.AbstractFinder$ClassInfo extends org.apache.xbean.finder.AbstractFinder$Annotatable
+implements org.apache.xbean.finder.AbstractFinder$Info
+  private field name : java.lang.String
+  private final field methods : java.util.List<org.apache.xbean.finder.AbstractFinder$MethodInfo>
+  private final field constructors : java.util.List<org.apache.xbean.finder.AbstractFinder$MethodInfo>
+  private field superType : java.lang.String
+  private field superclassInfo : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  private final field subclassInfos : java.util.List<org.apache.xbean.finder.AbstractFinder$ClassInfo>
+  private final field interfaces : java.util.List<java.lang.String>
+  private final field fields : java.util.List<org.apache.xbean.finder.AbstractFinder$FieldInfo>
+  private field path : java.lang.String
+  private field clazz : java.lang.Class<?>
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.Class clazz)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.String name, java.lang.String superType)
+  public method getPackageName() : java.lang.String
+  public method getConstructors() : void
+  public method getInterfaces() : void
+  public method getFields() : void
+  public method getMethods() : void
+  public method getName() : java.lang.String
+  public method getSuperType() : java.lang.String
+  public method get() : void
+    declares java.lang.ClassNotFoundException
+  public method toString() : java.lang.String
+  public method getPath() : java.lang.String
+
+# org.apache.xbean.finder.AbstractFinder$FieldInfo
+public class org.apache.xbean.finder.AbstractFinder$FieldInfo extends org.apache.xbean.finder.AbstractFinder$Annotatable
+implements org.apache.xbean.finder.AbstractFinder$Info
+  private final field name : java.lang.String
+  private final field type : java.lang.String
+  private final field declaringClass : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$ClassInfo info, java.lang.reflect.Field field)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$ClassInfo declaringClass, java.lang.String name, java.lang.String type)
+  public method getName() : java.lang.String
+  public method getDeclaringClass() : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  public method getType() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AbstractFinder$Info
+public interface org.apache.xbean.finder.AbstractFinder$Info
+  public method getName() : java.lang.String
+  public method getAnnotations() : void
+
+# org.apache.xbean.finder.AbstractFinder$InfoBuildingVisitor
+public class org.apache.xbean.finder.AbstractFinder$InfoBuildingVisitor extends org.apache.xbean.asm7.shade.commons.EmptyVisitor
+  private field info : org.apache.xbean.finder.AbstractFinder$Info
+  private field path : java.lang.String
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.String path)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$Info info)
+  public method visit(int version, int access, java.lang.String name, java.lang.String signature, java.lang.String superName, java.lang.String[] interfaces) : void
+  private method javaName(java.lang.String name) : java.lang.String
+  public method visitAnnotation(java.lang.String desc, boolean visible) : org.apache.xbean.asm7.AnnotationVisitor
+  public method visitField(int access, java.lang.String name, java.lang.String desc, java.lang.String signature, java.lang.Object value) : org.apache.xbean.asm7.FieldVisitor
+  public method visitMethod(int access, java.lang.String name, java.lang.String desc, java.lang.String signature, java.lang.String[] exceptions) : org.apache.xbean.asm7.MethodVisitor
+  public method visitMethodParameterAnnotation(int param, java.lang.String desc, boolean visible) : org.apache.xbean.asm7.AnnotationVisitor
+
+# org.apache.xbean.finder.AbstractFinder$MethodInfo
+public class org.apache.xbean.finder.AbstractFinder$MethodInfo extends org.apache.xbean.finder.AbstractFinder$Annotatable
+implements org.apache.xbean.finder.AbstractFinder$Info
+  private final field declaringClass : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  private final field returnType : java.lang.String
+  private final field name : java.lang.String
+  private final field parameterAnnotations : java.util.List<java.util.List<org.apache.xbean.finder.AbstractFinder$AnnotationInfo>>
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$ClassInfo info, java.lang.reflect.Constructor constructor)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$ClassInfo info, java.lang.reflect.Method method)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, org.apache.xbean.finder.AbstractFinder$ClassInfo declarignClass, java.lang.String name, java.lang.String returnType)
+  public method getParameterAnnotations() : void
+  public method getParameterAnnotations(int index) : void
+  public method getName() : java.lang.String
+  public method getDeclaringClass() : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  public method getReturnType() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AbstractFinder$PackageInfo
+public class org.apache.xbean.finder.AbstractFinder$PackageInfo extends org.apache.xbean.finder.AbstractFinder$Annotatable
+implements org.apache.xbean.finder.AbstractFinder$Info
+  private final field name : java.lang.String
+  private final field info : org.apache.xbean.finder.AbstractFinder$ClassInfo
+  private final field pkg : java.lang.Package
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.Package pkg)
+  public method <init>(org.apache.xbean.finder.AbstractFinder this$0, java.lang.String name)
+  public method getName() : java.lang.String
+  public method get() : java.lang.Package
+    declares java.lang.ClassNotFoundException
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+
+# org.apache.xbean.finder.AbstractFinder
+public abstract class org.apache.xbean.finder.AbstractFinder
+implements org.apache.xbean.finder.IAnnotationFinder
+  private final field annotated : java.util.Map<java.lang.String, java.util.List<org.apache.xbean.finder.AbstractFinder$Info>>
+  protected final field classInfos : java.util.Map<java.lang.String, org.apache.xbean.finder.AbstractFinder$ClassInfo>
+  protected final field originalInfos : java.util.Map<java.lang.String, org.apache.xbean.finder.AbstractFinder$ClassInfo>
+  private final field classesNotLoaded : java.util.List<java.lang.String>
+  private final field ASM_FLAGS : int
+  public method <init>()
+  protected method getResource(java.lang.String arg0) : java.net.URL
+  protected method loadClass(java.lang.String arg0) : void
+    declares java.lang.ClassNotFoundException
+  public method getAnnotatedClassNames() : void
+  public method link() : org.apache.xbean.finder.AbstractFinder
+    declares java.io.IOException
+  private method linkParent(org.apache.xbean.finder.AbstractFinder$ClassInfo classInfo) : void
+    declares java.io.IOException
+  private method linkInterfaces(org.apache.xbean.finder.AbstractFinder$ClassInfo classInfo) : void
+    declares java.io.IOException
+  public method isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method getClassesNotLoaded() : void
+  public method findAnnotatedPackages(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findMetaAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findInheritedAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findMetaAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedConstructors(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findMetaAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findClassesInPackage(java.lang.String packageName, boolean recursive) : void
+  public method findSubclasses(java.lang.Class<> clazz) : void
+  private method findSubclasses(org.apache.xbean.finder.AbstractFinder$ClassInfo classInfo, java.util.List<java.lang.Class<? extends >> found, java.lang.Class<> clazz) : void
+  private method _findSubclasses(java.lang.Class<> clazz) : void
+  public method findImplementations(java.lang.Class<> clazz) : void
+  private method collectImplementations(java.lang.String interfaceName) : void
+  protected method getAnnotationInfos(java.lang.String name) : void
+  protected method readClassDef(java.lang.String className) : void
+  protected method readClassDef(java.io.InputStream in) : void
+    declares java.io.IOException
+  protected method readClassDef(java.io.InputStream in, java.lang.String path) : void
+    declares java.io.IOException
+  protected method readClassDef(java.lang.Class clazz) : void
+
+# org.apache.xbean.finder.Annotated
+public interface org.apache.xbean.finder.Annotated
+implements java.lang.reflect.AnnotatedElement
+  public method get() : void
+
+# org.apache.xbean.finder.AnnotatedMember
+public interface org.apache.xbean.finder.AnnotatedMember
+implements org.apache.xbean.finder.Annotated
+implements java.lang.reflect.Member
+
+# org.apache.xbean.finder.AnnotatedMethod
+public interface org.apache.xbean.finder.AnnotatedMethod
+implements org.apache.xbean.finder.AnnotatedMember
+  public method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+  public method getExceptionTypes() : void
+  public method getParameterTypes() : void
+  public method toGenericString() : java.lang.String
+  public method getGenericExceptionTypes() : java.lang.reflect.Type[]
+  public method getGenericParameterTypes() : java.lang.reflect.Type[]
+  public method isVarArgs() : boolean
+
+# org.apache.xbean.finder.AnnotationFinder$Annotatable
+public class org.apache.xbean.finder.AnnotationFinder$Annotatable
+  private final field annotations : java.util.List<org.apache.xbean.finder.AnnotationFinder$AnnotationInfo>
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.reflect.AnnotatedElement element)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0)
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method getAnnotations() : void
+  public method getMetaAnnotationName() : java.lang.String
+  private method getAnnotations(java.lang.reflect.AnnotatedElement element) : java.lang.annotation.Annotation[]
+
+# org.apache.xbean.finder.AnnotationFinder$AnnotationInfo
+public class org.apache.xbean.finder.AnnotationFinder$AnnotationInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private final field name : java.lang.String
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.annotation.Annotation annotation)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.Class annotation)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.String name)
+  public method getName() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AnnotationFinder$ClassInfo
+public class org.apache.xbean.finder.AnnotationFinder$ClassInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private field name : java.lang.String
+  private final field methods : java.util.List<org.apache.xbean.finder.AnnotationFinder$MethodInfo>
+  private final field constructors : java.util.List<org.apache.xbean.finder.AnnotationFinder$MethodInfo>
+  private field superType : java.lang.String
+  private field superclassInfo : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  private final field subclassInfos : java.util.List<org.apache.xbean.finder.AnnotationFinder$ClassInfo>
+  private final field interfaces : java.util.List<java.lang.String>
+  private final field fields : java.util.List<org.apache.xbean.finder.AnnotationFinder$FieldInfo>
+  private field clazz : java.lang.Class<?>
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.Class clazz)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.String name, java.lang.String superType)
+  public method getMetaAnnotationName() : java.lang.String
+  public method getPackageName() : java.lang.String
+  public method getConstructors() : void
+  public method getInterfaces() : void
+  public method getFields() : void
+  public method getMethods() : void
+  public method getName() : java.lang.String
+  public method getSuperType() : java.lang.String
+  public method isAnnotation() : boolean
+  public method get() : void
+    declares java.lang.ClassNotFoundException
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AnnotationFinder$FieldInfo
+public class org.apache.xbean.finder.AnnotationFinder$FieldInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private final field name : java.lang.String
+  private final field type : java.lang.String
+  private final field declaringClass : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  private field field : java.lang.reflect.Field
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$ClassInfo info, java.lang.reflect.Field field)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$ClassInfo declaringClass, java.lang.String name, java.lang.String type)
+  public method getName() : java.lang.String
+  public method getDeclaringClass() : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  public method getType() : java.lang.String
+  public method toString() : java.lang.String
+  public method getMetaAnnotationName() : java.lang.String
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method get() : java.lang.reflect.Member
+    declares java.lang.ClassNotFoundException
+  private method toField() : java.lang.reflect.Field
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.AnnotationFinder$Info
+public interface org.apache.xbean.finder.AnnotationFinder$Info
+  public method getMetaAnnotationName() : java.lang.String
+  public method getName() : java.lang.String
+  public method getAnnotations() : void
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+
+# org.apache.xbean.finder.AnnotationFinder$InfoBuildingVisitor
+public class org.apache.xbean.finder.AnnotationFinder$InfoBuildingVisitor extends org.apache.xbean.asm7.shade.commons.EmptyVisitor
+  private field info : org.apache.xbean.finder.AnnotationFinder$Info
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$Info info)
+  public method getInfo() : org.apache.xbean.finder.AnnotationFinder$Info
+  public method visit(int version, int access, java.lang.String name, java.lang.String signature, java.lang.String superName, java.lang.String[] interfaces) : void
+  public method visitEnd() : void
+  private method isNaked(org.apache.xbean.finder.AnnotationFinder$PackageInfo info) : boolean
+  private method isNaked(org.apache.xbean.finder.AnnotationFinder$ClassInfo info) : boolean
+  private method javaName(java.lang.String name) : java.lang.String
+  public method visitInnerClass(java.lang.String name, java.lang.String outerName, java.lang.String innerName, int access) : void
+  public method visitAttribute(org.apache.xbean.asm7.Attribute attribute) : void
+  public method visitAnnotation(java.lang.String desc, boolean visible) : org.apache.xbean.asm7.AnnotationVisitor
+  public method visitField(int access, java.lang.String name, java.lang.String desc, java.lang.String signature, java.lang.Object value) : org.apache.xbean.asm7.FieldVisitor
+  public method visitMethod(int access, java.lang.String name, java.lang.String desc, java.lang.String signature, java.lang.String[] exceptions) : org.apache.xbean.asm7.MethodVisitor
+  public method visitMethodParameterAnnotation(int param, java.lang.String desc, boolean visible) : org.apache.xbean.asm7.AnnotationVisitor
+
+# org.apache.xbean.finder.AnnotationFinder$MethodInfo
+public class org.apache.xbean.finder.AnnotationFinder$MethodInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private final field declaringClass : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  private final field descriptor : java.lang.String
+  private final field name : java.lang.String
+  private final field parameterAnnotations : java.util.List<java.util.List<org.apache.xbean.finder.AnnotationFinder$AnnotationInfo>>
+  private final field parameters : java.util.List<org.apache.xbean.finder.AnnotationFinder$ParameterInfo>
+  private field method : java.lang.reflect.Member
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$ClassInfo info, java.lang.reflect.Constructor constructor)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$ClassInfo info, java.lang.reflect.Method method)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$ClassInfo declarignClass, java.lang.String name, java.lang.String descriptor)
+  public method getDescriptor() : java.lang.String
+  public method getMetaAnnotationName() : java.lang.String
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method isConstructor() : boolean
+  public method getParameterAnnotations() : void
+  public method getParameterAnnotations(int index) : void
+  public method getParameters() : void
+  public method getName() : java.lang.String
+  public method getDeclaringClass() : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  public method toString() : java.lang.String
+  public method get() : java.lang.reflect.Member
+    declares java.lang.ClassNotFoundException
+  private method toMethod() : java.lang.reflect.Member
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.AnnotationFinder$PackageInfo
+public class org.apache.xbean.finder.AnnotationFinder$PackageInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private final field name : java.lang.String
+  private final field info : org.apache.xbean.finder.AnnotationFinder$ClassInfo
+  private final field pkg : java.lang.Package
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.Package pkg)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.String name)
+  public method getName() : java.lang.String
+  public method get() : java.lang.Package
+    declares java.lang.ClassNotFoundException
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+
+# org.apache.xbean.finder.AnnotationFinder$ParameterInfo
+public class org.apache.xbean.finder.AnnotationFinder$ParameterInfo extends org.apache.xbean.finder.AnnotationFinder$Annotatable
+implements org.apache.xbean.finder.AnnotationFinder$Info
+  private final field declaringMethod : org.apache.xbean.finder.AnnotationFinder$MethodInfo
+  private final field index : int
+  private final field annotations : java.util.List<org.apache.xbean.finder.AnnotationFinder$AnnotationInfo>
+  private field parameter : org.apache.xbean.finder.Parameter<?>
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$MethodInfo parent, int index)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, org.apache.xbean.finder.AnnotationFinder$MethodInfo parent, org.apache.xbean.finder.Parameter parameter)
+  public method getName() : java.lang.String
+  public method get() : void
+    declares java.lang.ClassNotFoundException
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method getDeclaringMethod() : org.apache.xbean.finder.AnnotationFinder$MethodInfo
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.AnnotationFinder$SubArchive$E
+public class org.apache.xbean.finder.AnnotationFinder$SubArchive$E
+implements org.apache.xbean.finder.archive.Archive$Entry
+  private final field name : java.lang.String
+  public method <init>(org.apache.xbean.finder.AnnotationFinder$SubArchive this$1, java.lang.String name)
+  public method getName() : java.lang.String
+  public method getBytecode() : java.io.InputStream
+    declares java.io.IOException
+
+# org.apache.xbean.finder.AnnotationFinder$SubArchive
+public class org.apache.xbean.finder.AnnotationFinder$SubArchive
+implements org.apache.xbean.finder.archive.Archive
+  private field classes : java.util.List<org.apache.xbean.finder.archive.Archive$Entry>
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.String[] classes)
+  public method <init>(org.apache.xbean.finder.AnnotationFinder this$0, java.lang.Iterable classes)
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  public method iterator() : void
+
+# org.apache.xbean.finder.AnnotationFinder
+public class org.apache.xbean.finder.AnnotationFinder
+implements org.apache.xbean.finder.IAnnotationFinder
+  private static final field ASM_FLAGS : int
+  private static final field ALLOW_LAZY_LINKING : boolean
+  private final field metaroots : java.util.Set<java.lang.Class<? extends java.lang.annotation.Annotation>>
+  protected final field annotated : java.util.Map<java.lang.String, java.util.List<org.apache.xbean.finder.AnnotationFinder$Info>>
+  protected final field classInfos : java.util.Map<java.lang.String, org.apache.xbean.finder.AnnotationFinder$ClassInfo>
+  protected final field originalInfos : java.util.Map<java.lang.String, org.apache.xbean.finder.AnnotationFinder$ClassInfo>
+  private final field classesNotLoaded : java.util.List<java.lang.String>
+  private final field archive : org.apache.xbean.finder.archive.Archive
+  private final field checkRuntimeAnnotation : boolean
+  private field linking : boolean
+  private method <init>(org.apache.xbean.finder.AnnotationFinder parent, java.lang.Iterable<java.lang.String> classNames)
+  protected method newAnnotatedMap() : void
+  protected method newClassInfoMap() : void
+  protected method cleanOnNaked() : boolean
+  protected method isTracked(java.lang.String annotationType) : boolean
+  public method <init>(org.apache.xbean.finder.archive.Archive archive, boolean checkRuntimeAnnotation)
+  public method <init>(org.apache.xbean.finder.archive.Archive archive)
+  public method hasMetaAnnotations() : boolean
+  private method readClassDef(org.apache.xbean.finder.AnnotationFinder$ClassInfo info) : void
+  private method resolveAnnotations(org.apache.xbean.finder.AnnotationFinder parent, java.util.List<java.lang.String> scanned) : void
+  private method index(java.util.List<? extends org.apache.xbean.finder.AnnotationFinder$Info> infos) : void
+  private method index(org.apache.xbean.finder.AnnotationFinder$Info i) : void
+  public method getAnnotatedClassNames() : void
+  public method getArchive() : org.apache.xbean.finder.archive.Archive
+  public method link() : org.apache.xbean.finder.AnnotationFinder
+  public method enableMetaAnnotations() : org.apache.xbean.finder.AnnotationFinder
+  public method enableFindImplementations() : org.apache.xbean.finder.AnnotationFinder
+  public method enableFindSubclasses() : org.apache.xbean.finder.AnnotationFinder
+  private method resolveAnnotations(java.util.List<java.lang.String> scanned) : void
+  private method linkMetaAnnotations() : void
+  private method isMetaRoot(org.apache.xbean.finder.AnnotationFinder$ClassInfo classInfo) : boolean
+  private method isSelfAnnotated(org.apache.xbean.finder.AnnotationFinder$ClassInfo classInfo, java.lang.String metatype) : boolean
+  private method hasName(java.lang.String className, java.lang.String simpleName) : boolean
+  protected method linkParent(org.apache.xbean.finder.AnnotationFinder$ClassInfo classInfo) : void
+  protected method isJvm(java.lang.String name) : boolean
+  protected method linkInterfaces(org.apache.xbean.finder.AnnotationFinder$ClassInfo classInfo) : void
+  public method isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method getClassesNotLoaded() : void
+  public method findAnnotatedPackages(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findMetaAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  private static method isMetaAnnotation(java.lang.Class<? extends java.lang.annotation.Annotation> clazz) : void
+  private static method isMetatypeAnnotation(java.lang.Class<? extends java.lang.annotation.Annotation> type) : void
+  private static method isSelfAnnotated(java.lang.Class<? extends java.lang.annotation.Annotation> type, java.lang.String name) : void
+  private static method validTarget(java.lang.Class<? extends java.lang.annotation.Annotation> type) : void
+  private method findMetaAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation, java.util.Set<java.lang.Class<?>> classes) : void
+  public method findInheritedAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedMethodParameters(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findMetaAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  private method findMetaAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> annotation, java.util.Set<java.lang.reflect.Method> methods, java.util.Set<java.lang.String> seen) : void
+  public method findMetaAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  private method findMetaAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> annotation, java.util.Set<java.lang.reflect.Field> fields, java.util.Set<java.lang.String> seen) : void
+  public method findAnnotatedConstructors(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedConstructorParameters(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> annotation) : void
+  public method findClassesInPackage(java.lang.String packageName, boolean recursive) : void
+  public method findSubclasses(java.lang.Class<> clazz) : void
+  private method findSubclasses(org.apache.xbean.finder.AnnotationFinder$ClassInfo classInfo, java.util.List<java.lang.Class<? extends >> found, java.lang.Class<> clazz) : void
+  private method _findSubclasses(java.lang.Class<> clazz) : void
+  public method findImplementations(java.lang.Class<> clazz) : void
+  private method collectImplementations(java.lang.String interfaceName) : void
+  protected method getAnnotationInfos(java.lang.String name) : void
+  protected method initAnnotationInfos(java.lang.String name) : void
+  protected method readClassDef(java.lang.String className) : void
+  protected method readClassDef(java.lang.String className, java.io.InputStream in) : void
+    declares java.io.IOException
+  protected method readClassDef(java.lang.Class clazz) : void
+  public method select(java.lang.Class<?>[] clazz) : void
+  public method select(java.lang.String[] clazz) : org.apache.xbean.finder.AnnotationFinder
+  public method select(java.lang.Iterable<java.lang.String> clazz) : void
+  private method index(org.apache.xbean.finder.AnnotationFinder$AnnotationInfo annotationInfo, org.apache.xbean.finder.AnnotationFinder$Info info) : void
+
+# org.apache.xbean.finder.BundleAnnotationFinder$1
+class org.apache.xbean.finder.BundleAnnotationFinder$1
+
+# org.apache.xbean.finder.BundleAnnotationFinder$AnnotationFindingCallback
+class org.apache.xbean.finder.BundleAnnotationFinder$AnnotationFindingCallback
+implements org.apache.xbean.osgi.bundle.util.BundleResourceFinder$ResourceFinderCallback
+  private method <init>(org.apache.xbean.finder.BundleAnnotationFinder arg0)
+  public method foundInDirectory(org.osgi.framework.Bundle bundle, java.lang.String baseDir, java.net.URL url) : boolean
+    declares java.lang.Exception
+  public method foundInJar(org.osgi.framework.Bundle bundle, java.lang.String jarName, java.util.zip.ZipEntry entry, java.io.InputStream in) : boolean
+    declares java.lang.Exception
+
+# org.apache.xbean.finder.BundleAnnotationFinder
+public class org.apache.xbean.finder.BundleAnnotationFinder extends org.apache.xbean.finder.AbstractFinder
+  private final field bundle : org.osgi.framework.Bundle
+  private final field paths : java.util.Set<java.lang.String>
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle)
+    declares java.lang.Exception
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle, org.apache.xbean.osgi.bundle.util.ResourceDiscoveryFilter discoveryFilter)
+    declares java.lang.Exception
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle, org.apache.xbean.osgi.bundle.util.ResourceDiscoveryFilter discoveryFilter, java.util.Set<java.lang.String> paths)
+    declares java.lang.Exception
+  protected method getResource(java.lang.String s) : java.net.URL
+  protected method loadClass(java.lang.String s) : void
+    declares java.lang.ClassNotFoundException
+  public method getAnnotatedClassNames() : void
+
+# org.apache.xbean.finder.BundleAssignableClassFinder
+public class org.apache.xbean.finder.BundleAssignableClassFinder extends org.apache.xbean.osgi.bundle.util.BundleClassFinder
+  private static final field logger : org.slf4j.Logger
+  private field clses : java.lang.Class<?>[]
+  private field targetClassNames : java.util.Set<java.lang.String>
+  private field targetInterfaceNames : java.util.Set<java.lang.String>
+  private field wiredImportedPackageNames : java.util.Set<java.lang.String>
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle, java.lang.Class<?>[] clses, org.apache.xbean.osgi.bundle.util.ClassDiscoveryFilter discoveryFilter)
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, java.lang.Class<?>[] clses, org.osgi.framework.Bundle bundle)
+  protected method createSubBundleClassFinder(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle, org.apache.xbean.osgi.bundle.util.ClassDiscoveryFilter classDiscoveryFilter) : org.apache.xbean.osgi.bundle.util.BundleClassFinder
+  protected method isClassAcceptable(java.lang.String name, java.io.InputStream in) : boolean
+    declares java.io.IOException
+  protected method isClassAcceptable(java.net.URL url) : boolean
+  private method initialize() : void
+  private method isClassAssignable(java.lang.Class<?> cls) : void
+  private method isInterfaceAssignable(java.lang.String interfaceName) : boolean
+  private method isSuperClassAssignable(java.lang.String superClassName) : boolean
+  protected method toASMStylePackageName(java.lang.String className) : java.lang.String
+
+# org.apache.xbean.finder.ClassFinder
+public class org.apache.xbean.finder.ClassFinder extends org.apache.xbean.finder.AbstractFinder
+  private final field classLoader : java.lang.ClassLoader
+  public method <init>(java.lang.ClassLoader classLoader)
+    declares java.lang.Exception
+  public method <init>(java.lang.ClassLoader classLoader, boolean excludeParent)
+    declares java.lang.Exception
+  public method <init>(java.lang.ClassLoader classLoader, java.lang.ClassLoader exclude)
+    declares java.lang.Exception
+  public method <init>(java.lang.ClassLoader classLoader, java.net.URL url)
+  public method <init>(java.lang.ClassLoader classLoader, java.util.Collection<java.net.URL> urls)
+  public method <init>(java.lang.Class<?>[] classes)
+  public method <init>(java.util.List<java.lang.Class<?>> classes)
+  private static method getUrls(java.lang.ClassLoader classLoader, boolean excludeParent) : void
+    declares java.io.IOException
+  private static method getUrls(java.lang.ClassLoader classLoader, java.lang.ClassLoader excludeParent) : void
+    declares java.io.IOException
+  protected method getResource(java.lang.String className) : java.net.URL
+  protected method loadClass(java.lang.String fixedName) : void
+    declares java.lang.ClassNotFoundException
+  private method file(java.net.URL location) : void
+  private method scanDir(java.io.File dir, java.util.List<java.lang.String> classNames, java.lang.String packageName) : void
+  private method jar(java.net.URL location) : void
+    declares java.io.IOException
+  private method jar(java.util.jar.JarInputStream jarStream) : void
+    declares java.io.IOException
+
+# org.apache.xbean.finder.ClassLoaders
+public final class org.apache.xbean.finder.ClassLoaders
+  private static final field DONT_USE_GET_URLS : boolean
+  private static final field SYSTEM : java.lang.ClassLoader
+  private static final field UNIX : boolean
+  private static final field MJAR_PATTERN : java.util.regex.Pattern
+  public static method findUrls(java.lang.ClassLoader classLoader) : void
+    declares java.io.IOException
+  private static method addIfNotSo(java.util.Set<java.net.URL> urls, java.net.URL url) : void
+  public static method isNative(java.net.URL url) : boolean
+  private static method isSurefire(java.lang.ClassLoader classLoader) : boolean
+  private static method fromClassPath() : void
+  public static method findUrlFromResources(java.lang.ClassLoader classLoader) : void
+    declares java.io.IOException
+  private method <init>()
+
+# org.apache.xbean.finder.IAnnotationFinder
+public interface org.apache.xbean.finder.IAnnotationFinder
+  public method isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method getClassesNotLoaded() : void
+  public method findAnnotatedPackages(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findInheritedAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findAnnotatedConstructors(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findClassesInPackage(java.lang.String arg0, boolean arg1) : void
+  public method findSubclasses(java.lang.Class<> arg0) : void
+  public method findImplementations(java.lang.Class<> arg0) : void
+  public method findMetaAnnotatedMethods(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findMetaAnnotatedFields(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method findMetaAnnotatedClasses(java.lang.Class<? extends java.lang.annotation.Annotation> arg0) : void
+  public method getAnnotatedClassNames() : void
+
+# org.apache.xbean.finder.MetaAnnotated
+public interface org.apache.xbean.finder.MetaAnnotated
+implements org.apache.xbean.finder.Annotated
+  public method getMetaAnnotations() : void
+
+# org.apache.xbean.finder.MetaAnnotatedClass
+public class org.apache.xbean.finder.MetaAnnotatedClass extends org.apache.xbean.finder.MetaAnnotatedElement
+  public method <init>(java.lang.Class<> clazz)
+  public method forName(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  private method to(java.lang.Class<?> clazz) : void
+  public method forName(java.lang.String name, boolean initialize, java.lang.ClassLoader loader) : void
+    declares java.lang.ClassNotFoundException
+  public method newInstance() : void
+    declares java.lang.InstantiationException
+    declares java.lang.IllegalAccessException
+  public method isInstance(java.lang.Object obj) : boolean
+  public method isAssignableFrom(java.lang.Class<?> cls) : void
+  public method isInterface() : boolean
+  public method isArray() : boolean
+  public method isPrimitive() : boolean
+  public method isAnnotation() : boolean
+  public method isSynthetic() : boolean
+  public method getName() : java.lang.String
+  public method getClassLoader() : java.lang.ClassLoader
+  public method getTypeParameters() : void
+  public method getSuperclass() : void
+  public method getGenericSuperclass() : java.lang.reflect.Type
+  public method getPackage() : java.lang.Package
+  public method getInterfaces() : void
+  public method getGenericInterfaces() : java.lang.reflect.Type[]
+  public method getComponentType() : void
+  public method getModifiers() : int
+  public method getSigners() : java.lang.Object[]
+  public method getEnclosingMethod() : org.apache.xbean.finder.MetaAnnotatedMethod
+  public method getEnclosingConstructor() : void
+  public method getDeclaringClass() : void
+  public method getEnclosingClass() : void
+  public method getSimpleName() : java.lang.String
+  public method getCanonicalName() : java.lang.String
+  public method isAnonymousClass() : boolean
+  public method isLocalClass() : boolean
+  public method isMemberClass() : boolean
+  public method getClasses() : void
+  public method getFields() : org.apache.xbean.finder.MetaAnnotatedField[]
+    declares java.lang.SecurityException
+  public method getMethods() : org.apache.xbean.finder.MetaAnnotatedMethod[]
+    declares java.lang.SecurityException
+  public method getConstructors() : void
+    declares java.lang.SecurityException
+  public method getField(java.lang.String name) : org.apache.xbean.finder.MetaAnnotatedField
+    declares java.lang.NoSuchFieldException
+    declares java.lang.SecurityException
+  public method getMethod(java.lang.String name, java.lang.Class<?>[] parameterTypes) : void
+    declares java.lang.NoSuchMethodException
+    declares java.lang.SecurityException
+  public method getConstructor(java.lang.Class<?>[] parameterTypes) : void
+    declares java.lang.NoSuchMethodException
+    declares java.lang.SecurityException
+  public method getDeclaredClasses() : void
+    declares java.lang.SecurityException
+  public method getDeclaredFields() : org.apache.xbean.finder.MetaAnnotatedField[]
+    declares java.lang.SecurityException
+  public method getDeclaredMethods() : org.apache.xbean.finder.MetaAnnotatedMethod[]
+    declares java.lang.SecurityException
+  public method getDeclaredConstructors() : void
+    declares java.lang.SecurityException
+  public method getDeclaredField(java.lang.String name) : org.apache.xbean.finder.MetaAnnotatedField
+    declares java.lang.NoSuchFieldException
+    declares java.lang.SecurityException
+  public method getDeclaredMethod(java.lang.String name, java.lang.Class<?>[] parameterTypes) : void
+    declares java.lang.NoSuchMethodException
+    declares java.lang.SecurityException
+  public method getDeclaredConstructor(java.lang.Class<?>[] parameterTypes) : void
+    declares java.lang.NoSuchMethodException
+    declares java.lang.SecurityException
+  public method getResourceAsStream(java.lang.String name) : java.io.InputStream
+  public method getResource(java.lang.String name) : java.net.URL
+  public method getProtectionDomain() : java.security.ProtectionDomain
+  public method desiredAssertionStatus() : boolean
+  public method isEnum() : boolean
+  public method getEnumConstants() : void
+  public method cast(java.lang.Object obj) : void
+  public method asSubclass(java.lang.Class<> clazz) : void
+  private method to(java.lang.reflect.Method[] a) : org.apache.xbean.finder.MetaAnnotatedMethod[]
+  private method to(java.lang.reflect.Method method) : org.apache.xbean.finder.MetaAnnotatedMethod
+  private method to(java.lang.reflect.Constructor<?>[] a) : void
+  private method to(java.lang.reflect.Constructor<?> constructor) : void
+  private method to(java.lang.Class<?>[] a) : void
+  private method to(java.lang.reflect.Field[] a) : org.apache.xbean.finder.MetaAnnotatedField[]
+  private method to(java.lang.reflect.Field field) : org.apache.xbean.finder.MetaAnnotatedField
+
+# org.apache.xbean.finder.MetaAnnotatedConstructor
+public class org.apache.xbean.finder.MetaAnnotatedConstructor extends org.apache.xbean.finder.MetaAnnotatedElement
+implements org.apache.xbean.finder.AnnotatedMethod
+  private field parameterAnnotations : java.lang.annotation.Annotation[][]
+  public method <init>(java.lang.reflect.Constructor<> target)
+  public method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+  public method getDeclaringClass() : void
+  public method getName() : java.lang.String
+  public method getModifiers() : int
+  public method getParameterTypes() : void
+  public method getGenericParameterTypes() : java.lang.reflect.Type[]
+  public method getExceptionTypes() : void
+  public method getGenericExceptionTypes() : java.lang.reflect.Type[]
+  public method toGenericString() : java.lang.String
+  public method isVarArgs() : boolean
+  public method isSynthetic() : boolean
+
+# org.apache.xbean.finder.MetaAnnotatedElement
+public class org.apache.xbean.finder.MetaAnnotatedElement
+implements java.lang.reflect.AnnotatedElement
+implements org.apache.xbean.finder.MetaAnnotated
+  protected final field annotations : java.util.Map<java.lang.Class<? extends java.lang.annotation.Annotation>, org.apache.xbean.finder.MetaAnnotation<?>>
+  protected final field target : T
+  public method <init>(T element)
+  method <init>(T target, java.util.Map<java.lang.Class<? extends java.lang.annotation.Annotation>, org.apache.xbean.finder.MetaAnnotation<?>> annotations)
+  public method get() : void
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation> annotationClass) : void
+  public method getAnnotation(java.lang.Class<> annotationClass) : void
+  public method getAnnotations() : java.lang.annotation.Annotation[]
+  public method getMetaAnnotations() : void
+  public method equals(java.lang.Object obj) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+  private static method unroll(java.lang.Class<? extends java.lang.annotation.Annotation> clazz, int depth, java.util.Map<java.lang.Class<? extends java.lang.annotation.Annotation>, org.apache.xbean.finder.MetaAnnotation<?>> found) : void
+  private static method getDeclaredMetaAnnotations(java.lang.Class<? extends java.lang.annotation.Annotation> clazz) : void
+  private static method contains(java.lang.annotation.Annotation[] annotations, java.lang.Class<? extends java.lang.annotation.Annotation> clazz) : void
+  private static method getMetatype(java.lang.Class<? extends java.lang.annotation.Annotation> clazz) : void
+  private static method isMetaAnnotation(java.lang.Class<? extends java.lang.annotation.Annotation> clazz) : void
+  private static method isMetatypeAnnotation(java.lang.Class<? extends java.lang.annotation.Annotation> type) : void
+  private static method isSelfAnnotated(java.lang.Class<? extends java.lang.annotation.Annotation> type, java.lang.String name) : void
+  private static method validTarget(java.lang.Class<? extends java.lang.annotation.Annotation> type) : void
+  protected static method unroll(java.lang.reflect.AnnotatedElement element) : void
+  protected static method unroll(java.lang.annotation.Annotation[] annotations) : void
+  protected method unrollParameters(java.lang.annotation.Annotation[][] parameterAnnotations) : java.lang.annotation.Annotation[][]
+
+# org.apache.xbean.finder.MetaAnnotatedField
+public class org.apache.xbean.finder.MetaAnnotatedField extends org.apache.xbean.finder.MetaAnnotatedElement
+implements org.apache.xbean.finder.AnnotatedMember
+  public method <init>(java.lang.reflect.Field field)
+  public method getDeclaringClass() : void
+  public method getName() : java.lang.String
+  public method getModifiers() : int
+  public method isSynthetic() : boolean
+
+# org.apache.xbean.finder.MetaAnnotatedMethod
+public class org.apache.xbean.finder.MetaAnnotatedMethod extends org.apache.xbean.finder.MetaAnnotatedElement
+implements org.apache.xbean.finder.AnnotatedMethod
+  private final field parameterAnnotations : java.lang.annotation.Annotation[][]
+  public method <init>(java.lang.reflect.Method method)
+  public method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+  public method getDeclaringClass() : void
+  public method getName() : java.lang.String
+  public method getModifiers() : int
+  public method getParameterTypes() : void
+  public method getGenericParameterTypes() : java.lang.reflect.Type[]
+  public method getExceptionTypes() : void
+  public method getGenericExceptionTypes() : java.lang.reflect.Type[]
+  public method toGenericString() : java.lang.String
+  public method isVarArgs() : boolean
+  public method isSynthetic() : boolean
+
+# org.apache.xbean.finder.MetaAnnotation
+public class org.apache.xbean.finder.MetaAnnotation
+  private final field annotation : T
+  private final field depth : int
+  private final field conflicts : java.util.List<org.apache.xbean.finder.MetaAnnotation<>>
+  method <init>(T annotation, int depth)
+  public method get() : void
+  public method getDepth() : int
+  public method getConflicts() : void
+
+# org.apache.xbean.finder.Parameter$1
+final class org.apache.xbean.finder.Parameter$1 extends org.apache.xbean.finder.Parameter
+  method <init>(java.lang.reflect.Constructor declaringExecutable, int index)
+  protected method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+
+# org.apache.xbean.finder.Parameter$2
+final class org.apache.xbean.finder.Parameter$2 extends org.apache.xbean.finder.Parameter
+  method <init>(java.lang.reflect.Method declaringExecutable, int index)
+  protected method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+
+# org.apache.xbean.finder.Parameter
+public abstract class org.apache.xbean.finder.Parameter
+implements java.lang.reflect.AnnotatedElement
+  private final field declaringExecutable : E
+  private final field index : int
+  private method <init>(E declaringExecutable, int index)
+  public method getDeclaringExecutable() : void
+  public method getIndex() : int
+  public method getAnnotation(java.lang.Class<> annotationClass) : void
+  public method getAnnotations() : java.lang.annotation.Annotation[]
+  public method getDeclaredAnnotations() : java.lang.annotation.Annotation[]
+  public method isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation> annotationClass) : void
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+  protected method getParameterAnnotations() : java.lang.annotation.Annotation[][]
+  public static method declaredBy(java.lang.reflect.Constructor<> ctor, int index) : void
+  public static method declaredBy(java.lang.reflect.Method method, int index) : void
+
+# org.apache.xbean.finder.ResourceFinder
+public class org.apache.xbean.finder.ResourceFinder
+  private final field urls : java.net.URL[]
+  private final field path : java.lang.String
+  private final field classLoader : java.lang.ClassLoader
+  private final field resourcesNotLoaded : java.util.List<java.lang.String>
+  public method <init>(java.net.URL[] urls)
+  public method <init>(java.lang.String path)
+  public method <init>(java.lang.String path, java.net.URL[] urls)
+  public method <init>(java.lang.String path, java.lang.ClassLoader classLoader)
+  public method <init>(java.lang.String path, java.lang.ClassLoader classLoader, java.net.URL[] urls)
+  private static method isDirectory(java.net.URL url) : boolean
+  public method getResourcesNotLoaded() : void
+  public method find(java.lang.String uri) : java.net.URL
+    declares java.io.IOException
+  public method findAll(java.lang.String uri) : void
+    declares java.io.IOException
+  public method findString(java.lang.String uri) : java.lang.String
+    declares java.io.IOException
+  public method findAllStrings(java.lang.String uri) : void
+    declares java.io.IOException
+  public method findAvailableStrings(java.lang.String uri) : void
+    declares java.io.IOException
+  public method mapAllStrings(java.lang.String uri) : void
+    declares java.io.IOException
+  public method mapAvailableStrings(java.lang.String uri) : void
+    declares java.io.IOException
+  public method findClass(java.lang.String uri) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method findAllClasses(java.lang.String uri) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method findAvailableClasses(java.lang.String uri) : void
+    declares java.io.IOException
+  public method mapAllClasses(java.lang.String uri) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method mapAvailableClasses(java.lang.String uri) : void
+    declares java.io.IOException
+  public method findImplementation(java.lang.Class<?> interfase) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method findAllImplementations(java.lang.Class<> interfase) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method findAvailableImplementations(java.lang.Class<> interfase) : void
+    declares java.io.IOException
+  public method mapAllImplementations(java.lang.Class<> interfase) : void
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method mapAvailableImplementations(java.lang.Class<> interfase) : void
+    declares java.io.IOException
+  public method findProperties(java.lang.String uri) : java.util.Properties
+    declares java.io.IOException
+  public method findAllProperties(java.lang.String uri) : void
+    declares java.io.IOException
+  public method findAvailableProperties(java.lang.String uri) : void
+    declares java.io.IOException
+  public method mapAllProperties(java.lang.String uri) : void
+    declares java.io.IOException
+  public method mapAvailableProperties(java.lang.String uri) : void
+    declares java.io.IOException
+  public method getResourcesMap(java.lang.String uri) : void
+    declares java.io.IOException
+  private static method readDirectoryEntries(java.net.URL location, java.util.Map<java.lang.String, java.net.URL> resources) : void
+    declares java.net.MalformedURLException
+  private static method readJarEntries(java.net.URL location, java.lang.String basePath, java.util.Map<java.lang.String, java.net.URL> resources) : void
+    declares java.io.IOException
+  private method loadProperties(java.net.URL resource) : java.util.Properties
+    declares java.io.IOException
+  private method readContents(java.net.URL resource) : java.lang.String
+    declares java.io.IOException
+  public method getResource(java.lang.String fullUri) : java.net.URL
+  private method getResources(java.lang.String fulluri) : void
+    declares java.io.IOException
+  private method findResource(java.lang.String resourceName, java.net.URL[] search) : java.net.URL
+  private method targetURL(java.net.URL base, java.lang.String name) : java.net.URL
+    declares java.net.MalformedURLException
+  public static method decode(java.lang.String fileName) : java.lang.String
+
+# org.apache.xbean.finder.UriSet
+public class org.apache.xbean.finder.UriSet
+implements java.lang.Iterable
+  private final field URIs : java.util.Map<java.lang.String, java.net.URI>
+  public method <init>(java.net.URI[] URIs)
+  public method <init>(java.util.Collection<java.net.URI> URIs)
+  private method <init>(java.util.Map<java.lang.String, java.net.URI> URIs)
+  public method include(java.lang.String pattern) : org.apache.xbean.finder.UriSet
+  public method include(org.apache.xbean.finder.UriSet URISet) : org.apache.xbean.finder.UriSet
+  public method include(java.net.URI URI) : org.apache.xbean.finder.UriSet
+  public method exclude(org.apache.xbean.finder.UriSet URISet) : org.apache.xbean.finder.UriSet
+  public method exclude(java.net.URI URI) : org.apache.xbean.finder.UriSet
+  public method exclude(java.io.File file) : org.apache.xbean.finder.UriSet
+  public method exclude(java.lang.String pattern) : org.apache.xbean.finder.UriSet
+  public method excludePaths(java.lang.String pathString) : org.apache.xbean.finder.UriSet
+  public method filter(org.apache.xbean.finder.filter.Filter filter) : org.apache.xbean.finder.UriSet
+  public method matching(java.lang.String pattern) : org.apache.xbean.finder.UriSet
+  public method relative(java.io.File file) : org.apache.xbean.finder.UriSet
+  public method getURIs() : void
+  public method size() : int
+  public method iterator() : void
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.UrlSet
+public class org.apache.xbean.finder.UrlSet
+implements java.lang.Iterable
+  private final field urls : java.util.Map<java.lang.String, java.net.URL>
+  public method <init>(java.lang.ClassLoader classLoader)
+    declares java.io.IOException
+  public method <init>(java.net.URL[] urls)
+  public method <init>(java.util.Collection<java.net.URL> urls)
+  private method <init>(java.util.Map<java.lang.String, java.net.URL> urls)
+  public method include(org.apache.xbean.finder.UrlSet urlSet) : org.apache.xbean.finder.UrlSet
+  public method include(java.net.URL url) : org.apache.xbean.finder.UrlSet
+  public method exclude(org.apache.xbean.finder.UrlSet urlSet) : org.apache.xbean.finder.UrlSet
+  public method exclude(java.net.URL url) : org.apache.xbean.finder.UrlSet
+  public method exclude(java.lang.ClassLoader parent) : org.apache.xbean.finder.UrlSet
+    declares java.io.IOException
+  public method exclude(java.io.File file) : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method exclude(java.lang.String pattern) : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method excludeJavaExtDirs() : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method excludeJavaEndorsedDirs() : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method excludeJavaHome() : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method excludeJvm() : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method excludePaths(java.lang.String pathString) : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method filter(org.apache.xbean.finder.filter.Filter filter) : org.apache.xbean.finder.UrlSet
+  public method matching(java.lang.String pattern) : org.apache.xbean.finder.UrlSet
+  public method relative(java.io.File file) : org.apache.xbean.finder.UrlSet
+    declares java.net.MalformedURLException
+  public method getUrls() : void
+  public method size() : int
+  public method iterator() : void
+  public method toString() : java.lang.String
+  public method isOsx() : boolean
+
+# org.apache.xbean.finder.archive.Archive$Entry
+public interface org.apache.xbean.finder.archive.Archive$Entry
+  public method getName() : java.lang.String
+  public method getBytecode() : java.io.InputStream
+    declares java.io.IOException
+
+# org.apache.xbean.finder.archive.Archive
+public interface org.apache.xbean.finder.archive.Archive
+implements java.lang.Iterable
+  public method getBytecode(java.lang.String arg0) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String arg0) : void
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.archive.ArchiveIterator$1
+class org.apache.xbean.finder.archive.ArchiveIterator$1
+implements org.apache.xbean.finder.archive.Archive$Entry
+  method <init>(org.apache.xbean.finder.archive.ArchiveIterator this$0, java.lang.String arg1)
+  public method getName() : java.lang.String
+  public method getBytecode() : java.io.InputStream
+    declares java.io.IOException
+
+# org.apache.xbean.finder.archive.ArchiveIterator
+public class org.apache.xbean.finder.archive.ArchiveIterator
+implements java.util.Iterator
+  private final field classes : java.util.Iterator<java.lang.String>
+  private final field archive : org.apache.xbean.finder.archive.Archive
+  public method <init>(org.apache.xbean.finder.archive.Archive archive, java.util.Iterator<java.lang.String> classes)
+  public method hasNext() : boolean
+  public method next() : org.apache.xbean.finder.archive.Archive$Entry
+  public method remove() : void
+
+# org.apache.xbean.finder.archive.BundleArchive$1
+class org.apache.xbean.finder.archive.BundleArchive$1
+
+# org.apache.xbean.finder.archive.BundleArchive$AnnotationFindingCallback
+class org.apache.xbean.finder.archive.BundleArchive$AnnotationFindingCallback
+implements org.apache.xbean.osgi.bundle.util.BundleResourceFinder$ResourceFinderCallback
+  private method <init>(org.apache.xbean.finder.archive.BundleArchive arg0)
+  public method foundInDirectory(org.osgi.framework.Bundle bundle, java.lang.String baseDir, java.net.URL url) : boolean
+    declares java.lang.Exception
+  public method foundInJar(org.osgi.framework.Bundle bundle, java.lang.String jarName, java.util.zip.ZipEntry entry, java.io.InputStream in) : boolean
+    declares java.lang.Exception
+
+# org.apache.xbean.finder.archive.BundleArchive
+public class org.apache.xbean.finder.archive.BundleArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field bundle : org.osgi.framework.Bundle
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle)
+    declares java.lang.Exception
+  public method <init>(org.osgi.service.packageadmin.PackageAdmin packageAdmin, org.osgi.framework.Bundle bundle, org.apache.xbean.osgi.bundle.util.ResourceDiscoveryFilter discoveryFilter)
+    declares java.lang.Exception
+  public method iterator() : void
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String s) : void
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.archive.ClassesArchive
+public class org.apache.xbean.finder.archive.ClassesArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field loaders : java.util.Set<java.lang.ClassLoader>
+  private final field classes : java.util.Map<java.lang.String, java.lang.Class<?>>
+  public method <init>(java.lang.Class<?>[] classes)
+  public method <init>(java.lang.Iterable<java.lang.Class<?>> classes)
+  public method iterator() : void
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.archive.ClasspathArchive
+public class org.apache.xbean.finder.archive.ClasspathArchive extends org.apache.xbean.finder.archive.CompositeArchive
+  private final field urls : java.util.List<java.net.URL>
+  private final field loader : java.lang.ClassLoader
+  public method <init>(java.lang.ClassLoader loader, java.net.URL[] urls)
+  public method <init>(java.lang.ClassLoader loader, java.lang.Iterable<java.net.URL> urls)
+  public static method archives(java.lang.ClassLoader loader, java.lang.Iterable<java.net.URL> urls) : void
+  public static method archive(java.lang.ClassLoader loader, java.net.URL location) : org.apache.xbean.finder.archive.Archive
+  public static method archives(java.lang.ClassLoader loader, java.net.URL[] urls) : void
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+
+# org.apache.xbean.finder.archive.CompositeArchive$1
+class org.apache.xbean.finder.archive.CompositeArchive$1
+
+# org.apache.xbean.finder.archive.CompositeArchive$CompositeIterator
+class org.apache.xbean.finder.archive.CompositeArchive$CompositeIterator
+implements java.util.Iterator
+  private field archives : java.util.Iterator<org.apache.xbean.finder.archive.Archive>
+  private field current : java.util.Iterator<org.apache.xbean.finder.archive.Archive$Entry>
+  private method <init>(java.lang.Iterable<org.apache.xbean.finder.archive.Archive> archives)
+  public method hasNext() : boolean
+  public method next() : org.apache.xbean.finder.archive.Archive$Entry
+  public method remove() : void
+
+# org.apache.xbean.finder.archive.CompositeArchive
+public class org.apache.xbean.finder.archive.CompositeArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field archives : java.util.List<org.apache.xbean.finder.archive.Archive>
+  public method <init>(org.apache.xbean.finder.archive.Archive[] archives)
+  public method <init>(java.lang.Iterable<org.apache.xbean.finder.archive.Archive> archives)
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  public method iterator() : void
+
+# org.apache.xbean.finder.archive.FileArchive
+public class org.apache.xbean.finder.archive.FileArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field loader : java.lang.ClassLoader
+  private final field basePackage : java.lang.String
+  private final field dir : java.io.File
+  private field list : java.util.List<java.lang.String>
+  private final field mjar : org.apache.xbean.finder.archive.MJarSupport
+  public method <init>(java.lang.ClassLoader loader, java.net.URL url)
+  public method <init>(java.lang.ClassLoader loader, java.io.File dir)
+  public method <init>(java.lang.ClassLoader loader, java.net.URL url, java.lang.String basePackage)
+  public method <init>(java.lang.ClassLoader loader, java.io.File dir, java.lang.String basePackage)
+  public method getDir() : java.io.File
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  public method iterator() : void
+  public method _iterator() : void
+  private method file(java.io.File dir) : void
+  private method scanDir(java.io.File dir, java.util.List<java.lang.String> classNames, java.lang.String packageName) : void
+  private static method toFile(java.net.URL url) : java.io.File
+  public static method decode(java.lang.String fileName) : java.lang.String
+
+# org.apache.xbean.finder.archive.FilteredArchive$1
+class org.apache.xbean.finder.archive.FilteredArchive$1
+
+# org.apache.xbean.finder.archive.FilteredArchive$FilteredIterator
+final class org.apache.xbean.finder.archive.FilteredArchive$FilteredIterator
+implements java.util.Iterator
+  private final field it : java.util.Iterator<org.apache.xbean.finder.archive.Archive$Entry>
+  private field next : org.apache.xbean.finder.archive.Archive$Entry
+  private method <init>(org.apache.xbean.finder.archive.FilteredArchive arg0, java.util.Iterator it)
+  public method hasNext() : boolean
+  public method next() : org.apache.xbean.finder.archive.Archive$Entry
+  public method remove() : void
+  private method seek() : void
+
+# org.apache.xbean.finder.archive.FilteredArchive
+public class org.apache.xbean.finder.archive.FilteredArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field archive : org.apache.xbean.finder.archive.Archive
+  private final field filter : org.apache.xbean.finder.filter.Filter
+  public method <init>(org.apache.xbean.finder.archive.Archive archive, org.apache.xbean.finder.filter.Filter filter)
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  public method iterator() : void
+
+# org.apache.xbean.finder.archive.JarArchive$1
+class org.apache.xbean.finder.archive.JarArchive$1
+
+# org.apache.xbean.finder.archive.JarArchive$JarIterator$1
+class org.apache.xbean.finder.archive.JarArchive$JarIterator$1
+implements java.util.Comparator
+  method <init>(org.apache.xbean.finder.archive.JarArchive$JarIterator this$1, org.apache.xbean.finder.archive.JarArchive arg1)
+  public method compare(java.util.jar.JarEntry o1, java.util.jar.JarEntry o2) : int
+
+# org.apache.xbean.finder.archive.JarArchive$JarIterator$ClassEntry
+class org.apache.xbean.finder.archive.JarArchive$JarIterator$ClassEntry
+implements org.apache.xbean.finder.archive.Archive$Entry
+  private final field name : java.lang.String
+  private final field entry : java.util.jar.JarEntry
+  private method <init>(org.apache.xbean.finder.archive.JarArchive$JarIterator arg0, java.util.jar.JarEntry entry, java.lang.String name)
+  public method getName() : java.lang.String
+  public method getBytecode() : java.io.InputStream
+    declares java.io.IOException
+
+# org.apache.xbean.finder.archive.JarArchive$JarIterator
+class org.apache.xbean.finder.archive.JarArchive$JarIterator
+implements java.util.Iterator
+  private final field stream : java.util.Iterator<java.util.jar.JarEntry>
+  private field next : org.apache.xbean.finder.archive.Archive$Entry
+  private method <init>(org.apache.xbean.finder.archive.JarArchive arg0)
+  private method advance() : boolean
+  public method hasNext() : boolean
+  public method next() : org.apache.xbean.finder.archive.Archive$Entry
+  public method remove() : void
+
+# org.apache.xbean.finder.archive.JarArchive
+public class org.apache.xbean.finder.archive.JarArchive
+implements org.apache.xbean.finder.archive.Archive
+  private final field loader : java.lang.ClassLoader
+  private final field url : java.net.URL
+  private final field jar : java.util.jar.JarFile
+  private final field mjar : org.apache.xbean.finder.archive.MJarSupport
+  public method <init>(java.lang.ClassLoader loader, java.net.URL url)
+  public method getUrl() : java.net.URL
+  public method getBytecode(java.lang.String className) : java.io.InputStream
+    declares java.io.IOException
+    declares java.lang.ClassNotFoundException
+  public method loadClass(java.lang.String className) : void
+    declares java.lang.ClassNotFoundException
+  public method iterator() : void
+
+# org.apache.xbean.finder.archive.MJarSupport$1
+class org.apache.xbean.finder.archive.MJarSupport$1
+
+# org.apache.xbean.finder.archive.MJarSupport$Clazz
+public class org.apache.xbean.finder.archive.MJarSupport$Clazz
+  private final field path : java.lang.String
+  private final field version : int
+  private method <init>(java.lang.String path, int version)
+  public method getPath() : java.lang.String
+
+# org.apache.xbean.finder.archive.MJarSupport
+public class org.apache.xbean.finder.archive.MJarSupport
+  private static final field SUPPORT_MJAR : boolean
+  private static final field MJAR_VERSION : int
+  private field mjar : boolean
+  private final field classes : java.util.Map<java.lang.String, org.apache.xbean.finder.archive.MJarSupport$Clazz>
+  public method <init>()
+  private static method findMJarVersion() : int
+  private static method major(java.lang.String version) : int
+  public method isMjar() : boolean
+  public method getClasses() : void
+  public method load(java.io.InputStream is) : void
+    declares java.io.IOException
+  public method load(java.util.jar.Manifest manifest) : void
+  public method visit(java.lang.String name) : void
+
+# org.apache.xbean.finder.filter.ClassFilter
+public class org.apache.xbean.finder.filter.ClassFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field name : java.lang.String
+  public method <init>(java.lang.String name)
+  public method getName() : java.lang.String
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.ContainsFilter
+public class org.apache.xbean.finder.filter.ContainsFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field token : java.lang.String
+  public method <init>(java.lang.String token)
+  public method getToken() : java.lang.String
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.ExcludeIncludeFilter
+public class org.apache.xbean.finder.filter.ExcludeIncludeFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field include : org.apache.xbean.finder.filter.Filter
+  private final field exclude : org.apache.xbean.finder.filter.Filter
+  public method <init>(org.apache.xbean.finder.filter.Filter include, org.apache.xbean.finder.filter.Filter exclude)
+  public method accept(java.lang.String name) : boolean
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.Filter
+public interface org.apache.xbean.finder.filter.Filter
+  public method accept(java.lang.String arg0) : boolean
+
+# org.apache.xbean.finder.filter.FilterList
+public class org.apache.xbean.finder.filter.FilterList
+implements org.apache.xbean.finder.filter.Filter
+  private final field filters : java.util.List<org.apache.xbean.finder.filter.Filter>
+  public method <init>(org.apache.xbean.finder.filter.Filter[] filters)
+  public method <init>(java.lang.Iterable<org.apache.xbean.finder.filter.Filter> filters)
+  public method accept(java.lang.String name) : boolean
+  public method getFilters() : void
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.Filters$1
+final class org.apache.xbean.finder.filter.Filters$1
+implements org.apache.xbean.finder.filter.Filter
+  method <init>()
+  public method accept(java.lang.String name) : boolean
+
+# org.apache.xbean.finder.filter.Filters$NegativeFilter
+final class org.apache.xbean.finder.filter.Filters$NegativeFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field filter : org.apache.xbean.finder.filter.Filter
+  public method <init>(org.apache.xbean.finder.filter.Filter filter)
+  public method accept(java.lang.String name) : boolean
+  public method getFilter() : org.apache.xbean.finder.filter.Filter
+
+# org.apache.xbean.finder.filter.Filters
+public class org.apache.xbean.finder.filter.Filters
+  private static final field NONE : org.apache.xbean.finder.filter.Filter
+  public method <init>()
+  public static method packages(java.lang.String[] packages) : org.apache.xbean.finder.filter.Filter
+  public static method classes(java.lang.String[] classes) : org.apache.xbean.finder.filter.Filter
+  public static method prefixes(java.lang.String[] prefixes) : org.apache.xbean.finder.filter.Filter
+  public static method tokens(java.lang.String[] tokens) : org.apache.xbean.finder.filter.Filter
+  public static method suffixes(java.lang.String[] suffixes) : org.apache.xbean.finder.filter.Filter
+  public static method patterns(java.lang.String[] patterns) : org.apache.xbean.finder.filter.Filter
+  public static method optimize(org.apache.xbean.finder.filter.Filter[] filters) : org.apache.xbean.finder.filter.Filter
+  public static method optimize(java.util.List<org.apache.xbean.finder.filter.Filter>[] filterss) : void
+  public static method invert(org.apache.xbean.finder.filter.Filter filter) : org.apache.xbean.finder.filter.Filter
+  private static method unwrap(java.util.List<org.apache.xbean.finder.filter.Filter> filters, java.util.Set<org.apache.xbean.finder.filter.Filter> unwrapped) : void
+
+# org.apache.xbean.finder.filter.IncludeExcludeFilter
+public class org.apache.xbean.finder.filter.IncludeExcludeFilter
+implements org.apache.xbean.finder.filter.Filter
+  private field include : org.apache.xbean.finder.filter.Filter
+  private field exclude : org.apache.xbean.finder.filter.Filter
+  public method <init>(org.apache.xbean.finder.filter.Filter include, org.apache.xbean.finder.filter.Filter exclude)
+  public method accept(java.lang.String name) : boolean
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.PackageFilter
+public class org.apache.xbean.finder.filter.PackageFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field packageName : java.lang.String
+  public method <init>(java.lang.String packageName)
+  public method getPackageName() : java.lang.String
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.PatternFilter
+public class org.apache.xbean.finder.filter.PatternFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field pattern : java.util.regex.Pattern
+  public method <init>(java.lang.String expression)
+  public method <init>(java.util.regex.Pattern pattern)
+  public method getPattern() : java.util.regex.Pattern
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.PrefixFilter
+public class org.apache.xbean.finder.filter.PrefixFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field prefix : java.lang.String
+  public method <init>(java.lang.String prefix)
+  public method getPrefix() : java.lang.String
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.filter.SuffixFilter
+public class org.apache.xbean.finder.filter.SuffixFilter
+implements org.apache.xbean.finder.filter.Filter
+  private final field suffix : java.lang.String
+  public method <init>(java.lang.String suffix)
+  public method getSuffix() : java.lang.String
+  public method accept(java.lang.String name) : boolean
+  public method equals(java.lang.Object o) : boolean
+  public method hashCode() : int
+  public method toString() : java.lang.String
+
+# org.apache.xbean.finder.util.Classes
+public class org.apache.xbean.finder.util.Classes
+  private static final field primitiveWrappers : java.util.Map<java.lang.Class<?>, java.lang.Class<?>>
+  private static final field primitives : java.util.HashMap<java.lang.String, java.lang.Class>
+  public method <init>()
+  public static method equals(java.lang.String classNameA, java.lang.String classNameB) : boolean
+  public static method forName(java.lang.String string, java.lang.ClassLoader classLoader) : java.lang.Class
+    declares java.lang.ClassNotFoundException
+  public static method packageName(java.lang.Class clazz) : java.lang.String
+  public static method packageName(java.lang.String clazzName) : java.lang.String
+  public static method getSimpleNames(java.lang.Class[] classes) : void
+  public static method deprimitivize(java.lang.Class<?> fieldType) : void
+
+# org.apache.xbean.finder.util.Files
+public final class org.apache.xbean.finder.util.Files
+  public static method toFile(java.net.URL url) : java.io.File
+  private method <init>()
+
+# org.apache.xbean.finder.util.SingleLinkedList$1
+class org.apache.xbean.finder.util.SingleLinkedList$1
+
+# org.apache.xbean.finder.util.SingleLinkedList$Entries
+class org.apache.xbean.finder.util.SingleLinkedList$Entries
+implements java.util.Iterator
+implements java.lang.Iterable
+  private field current : org.apache.xbean.finder.util.SingleLinkedList<, >
+  private method <init>(org.apache.xbean.finder.util.SingleLinkedList arg0, org.apache.xbean.finder.util.SingleLinkedList$Entry current)
+  public method iterator() : void
+  public method hasNext() : boolean
+  public method next() : void
+  public method remove() : void
+
+# org.apache.xbean.finder.util.SingleLinkedList$Entry
+class org.apache.xbean.finder.util.SingleLinkedList$Entry
+  private field value : E
+  private field next : org.apache.xbean.finder.util.SingleLinkedList$Entry
+  private method <init>(org.apache.xbean.finder.util.SingleLinkedList arg0, java.lang.Object value, org.apache.xbean.finder.util.SingleLinkedList$Entry next)
+
+# org.apache.xbean.finder.util.SingleLinkedList$Values
+class org.apache.xbean.finder.util.SingleLinkedList$Values
+implements java.util.Iterator
+  private field current : org.apache.xbean.finder.util.SingleLinkedList<, >
+  private method <init>(org.apache.xbean.finder.util.SingleLinkedList arg0, org.apache.xbean.finder.util.SingleLinkedList$Entry current)
+  public method hasNext() : boolean
+  public method next() : void
+  public method remove() : void
+
+# org.apache.xbean.finder.util.SingleLinkedList
+public class org.apache.xbean.finder.util.SingleLinkedList
+implements java.util.List
+  private field entry : org.apache.xbean.finder.util.SingleLinkedList<, >
+  private field size : int
+  public method <init>()
+  public method size() : int
+  public method isEmpty() : boolean
+  public method contains(java.lang.Object o) : boolean
+  public method iterator() : void
+  public method toArray() : java.lang.Object[]
+  public method toArray(T[] a) : void
+  public method add(E e) : void
+  public method remove(java.lang.Object o) : boolean
+  public method containsAll(java.util.Collection<?> c) : void
+  public method addAll(java.util.Collection<? extends > c) : void
+  public method addAll(int index, java.util.Collection<? extends > c) : void
+  public method removeAll(java.util.Collection<?> c) : void
+  public method retainAll(java.util.Collection<?> c) : void
+  public method clear() : void
+  public method get(int index) : void
+  public method set(int index, E element) : void
+  public method add(int index, E element) : void
+  public method remove(int index) : void
+  public method indexOf(java.lang.Object o) : int
+  public method lastIndexOf(java.lang.Object o) : int
+  public method listIterator() : void
+  public method listIterator(int index) : void
+  public method subList(int fromIndex, int toIndex) : void
+  private method bounds(int index) : void
+  private method values() : void
+  private method entries() : void
+
+# resources
+META-INF/MANIFEST.MF
+META-INF/DEPENDENCIES
+META-INF/LICENSE
+META-INF/NOTICE
+META-INF/maven/org.apache.xbean/xbean-finder-shaded/pom.properties
+META-INF/maven/org.apache.xbean/xbean-finder-shaded/pom.xml

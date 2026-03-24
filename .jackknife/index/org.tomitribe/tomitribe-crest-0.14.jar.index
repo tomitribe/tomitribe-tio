@@ -1,0 +1,1408 @@
+# org.tomitribe.crest.cmds.HelpPrintedException
+public class org.tomitribe.crest.cmds.HelpPrintedException extends java.lang.IllegalArgumentException
+@org.tomitribe.crest.api.Exit
+  public method <init>(java.lang.Throwable throwable)
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$7
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$7 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.CmdMethod$1
+final class org.tomitribe.crest.cmds.CmdMethod$1
+implements org.tomitribe.util.Join$NameCallback
+  method <init>()
+  public method getName(java.lang.String object) : java.lang.String
+
+# org.tomitribe.crest.table.Data$Builder
+public class org.tomitribe.crest.table.Data$Builder
+  private final field rows : java.util.List<java.lang.String[]>
+  private field headings : boolean
+  public method <init>()
+  public method row(java.lang.String[] columns) : org.tomitribe.crest.table.Data$Builder
+  public method headings(boolean headings) : org.tomitribe.crest.table.Data$Builder
+  public method build() : org.tomitribe.crest.table.Data
+
+# org.tomitribe.crest.table.Border$Builder
+public final class org.tomitribe.crest.table.Border$Builder
+  private field first : org.tomitribe.crest.table.Line$Builder
+  private field last : org.tomitribe.crest.table.Line$Builder
+  private field header : org.tomitribe.crest.table.Line$Builder
+  private field inner : org.tomitribe.crest.table.Line$Builder
+  private field middle : org.tomitribe.crest.table.Line$Builder
+  private method <init>()
+  public method all() : void
+  public method first() : org.tomitribe.crest.table.Line$Builder
+  public method last() : org.tomitribe.crest.table.Line$Builder
+  public method header() : org.tomitribe.crest.table.Line$Builder
+  public method inner() : org.tomitribe.crest.table.Line$Builder
+  public method row() : org.tomitribe.crest.table.Line$Builder
+  public method first(org.tomitribe.crest.table.Line$Builder first) : org.tomitribe.crest.table.Border$Builder
+  public method last(org.tomitribe.crest.table.Line$Builder last) : org.tomitribe.crest.table.Border$Builder
+  public method header(org.tomitribe.crest.table.Line$Builder header) : org.tomitribe.crest.table.Border$Builder
+  public method inner(org.tomitribe.crest.table.Line$Builder inner) : org.tomitribe.crest.table.Border$Builder
+  public method row(org.tomitribe.crest.table.Line$Builder middle) : org.tomitribe.crest.table.Border$Builder
+  public method first(java.lang.String left, java.lang.String middle, java.lang.String inner, java.lang.String right) : org.tomitribe.crest.table.Border$Builder
+  public method header(java.lang.String left, java.lang.String middle, java.lang.String inner, java.lang.String right) : org.tomitribe.crest.table.Border$Builder
+  public method row(java.lang.String left, java.lang.String inner, java.lang.String right) : org.tomitribe.crest.table.Border$Builder
+  public method inner(java.lang.String left, java.lang.String middle, java.lang.String inner, java.lang.String right) : org.tomitribe.crest.table.Border$Builder
+  public method last(java.lang.String left, java.lang.String middle, java.lang.String inner, java.lang.String right) : org.tomitribe.crest.table.Border$Builder
+  public method build() : org.tomitribe.crest.table.Border
+
+# org.tomitribe.crest.javadoc.Javadoc$Return
+public class org.tomitribe.crest.javadoc.Javadoc$Return
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Return$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$Throws
+public class org.tomitribe.crest.javadoc.Javadoc$Throws
+  private final field classname : java.lang.String
+  private final field description : java.lang.String
+  method <init>(java.lang.String classname, java.lang.String description)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Throws$Builder
+  public method getClassname() : java.lang.String
+  public method getDescription() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.val.Readable$Constraint
+public class org.tomitribe.crest.val.Readable$Constraint extends org.tomitribe.crest.val.ConstraintAdapter
+  public method <init>()
+  public method isValid(java.io.File value) : boolean
+
+# org.tomitribe.crest.EditorLoader$XBeanLoader
+class org.tomitribe.crest.EditorLoader$XBeanLoader
+  private method <init>()
+  public method load() : void
+
+# org.tomitribe.crest.cmds.targets.Target
+public interface org.tomitribe.crest.cmds.targets.Target
+  public method invoke(java.lang.reflect.Method arg0, java.lang.Object[] arg1) : java.lang.Object
+    declares java.lang.reflect.InvocationTargetException
+    declares java.lang.IllegalAccessException
+  public method getInstance(java.lang.reflect.Method arg0) : java.lang.Object
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$1
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$1 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.CmdMethod$4
+class org.tomitribe.crest.cmds.CmdMethod$4
+
+# org.tomitribe.crest.cmds.Cmd
+public interface org.tomitribe.crest.cmds.Cmd
+implements org.tomitribe.crest.cmds.Completer
+  public method getUsage() : java.lang.String
+  public method getName() : java.lang.String
+  public method exec(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> arg0, java.lang.String[] arg1) : void
+  public method help(java.io.PrintStream arg0) : void
+  public method manual(java.io.PrintStream out) : void
+
+# org.tomitribe.crest.javadoc.Javadoc$Param
+public class org.tomitribe.crest.javadoc.Javadoc$Param
+  private final field name : java.lang.String
+  private final field description : java.lang.String
+  method <init>(java.lang.String name, java.lang.String description)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Param$Builder
+  public method getName() : java.lang.String
+  public method getDescription() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.JavadocParser
+public class org.tomitribe.crest.javadoc.JavadocParser
+  private final field javadoc : org.tomitribe.crest.javadoc.Javadoc$Builder
+  private final field content : java.lang.String
+  public method <init>(java.lang.String content)
+  private method parse() : org.tomitribe.crest.javadoc.Javadoc
+  private method convert(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method deprecated(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method version(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method since(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method returning(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method see(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method author(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method throwing(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  private method param(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : void
+  static method toTag(java.lang.String text) : org.tomitribe.crest.javadoc.Javadoc$Tag
+  private static method parseKeyValue(java.lang.String text) : void
+  private method splitParts() : void
+  public method build() : org.tomitribe.crest.javadoc.Javadoc
+  public static method parse(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc
+
+# org.tomitribe.crest.interceptor.security.RoleProvider
+public interface org.tomitribe.crest.interceptor.security.RoleProvider
+  public method hasRole(java.lang.String arg0) : boolean
+
+# org.tomitribe.crest.help.Bullet
+public class org.tomitribe.crest.help.Bullet
+implements org.tomitribe.crest.help.Element
+  private final field content : java.lang.String
+  public method <init>(java.lang.String content)
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.val.Exists
+public interface org.tomitribe.crest.val.Exists
+implements java.lang.annotation.Annotation
+@java.lang.annotation.Documented
+@javax.validation.Constraint
+@java.lang.annotation.Target
+@java.lang.annotation.Retention
+  public method groups() : void
+  public method message() : java.lang.String
+  public method payload() : void
+
+# org.tomitribe.crest.val.Executable
+public interface org.tomitribe.crest.val.Executable
+implements java.lang.annotation.Annotation
+@java.lang.annotation.Documented
+@javax.validation.Constraint
+@java.lang.annotation.Target
+@java.lang.annotation.Retention
+  public method groups() : void
+  public method message() : java.lang.String
+  public method payload() : void
+
+# org.tomitribe.crest.contexts.DefaultsContext
+public interface org.tomitribe.crest.contexts.DefaultsContext
+  public method find(org.tomitribe.crest.cmds.targets.Target arg0, java.lang.reflect.Method arg1, java.lang.String arg2) : java.lang.String
+
+# org.tomitribe.crest.cmds.targets.Substitution$2
+final class org.tomitribe.crest.cmds.targets.Substitution$2 extends org.tomitribe.crest.lang.Substitutor
+  method <init>(org.tomitribe.crest.cmds.targets.Target arg0, java.lang.reflect.Method arg1, org.tomitribe.crest.contexts.DefaultsContext arg2)
+  protected method getOrDefault(java.lang.String varName, java.lang.String varDefaultValue) : java.lang.String
+
+# org.tomitribe.crest.cmds.targets.Substitution$1
+final class org.tomitribe.crest.cmds.targets.Substitution$1 extends java.util.HashMap
+  method <init>()
+
+# org.tomitribe.crest.cmds.CmdMethod$Arguments
+class org.tomitribe.crest.cmds.CmdMethod$Arguments
+  private final field list : java.util.List<java.lang.String>
+  private final field options : java.util.Map<java.lang.String, java.lang.String>
+  private method <init>(org.tomitribe.crest.cmds.CmdMethod arg0, java.lang.String[] rawArgs)
+  private method getCommand(java.lang.String defaultPrefix, java.lang.String arg, java.util.Map<java.lang.String, java.lang.String> defaults, java.util.Map<java.lang.String, java.lang.String> supplied, java.util.List<java.lang.String> invalid, java.util.Set<java.lang.String> repeated) : void
+  private method processOption(java.lang.String prefix, java.lang.String optName, java.lang.String optValue, java.util.Map<java.lang.String, java.lang.String> defaults, java.util.Map<java.lang.String, java.lang.String> supplied, java.util.List<java.lang.String> invalid, java.util.Set<java.lang.String> repeated) : void
+  private method interpret(java.util.Map<java.lang.String, java.lang.String> map) : void
+  private method checkInvalid(java.util.List<java.lang.String> invalid) : void
+  private method checkRequired(java.util.Map<java.lang.String, java.lang.String> supplied) : void
+  private method checkRepeated(java.util.Set<java.lang.String> repeated) : void
+
+# org.tomitribe.crest.table.Line$Builder
+public final class org.tomitribe.crest.table.Line$Builder
+  private field left : java.lang.String
+  private field right : java.lang.String
+  private field inner : java.lang.String
+  private field middle : java.lang.String
+  private method <init>()
+  public method all(java.lang.String string) : org.tomitribe.crest.table.Line$Builder
+  public method left(java.lang.String left) : org.tomitribe.crest.table.Line$Builder
+  public method right(java.lang.String right) : org.tomitribe.crest.table.Line$Builder
+  public method inner(java.lang.String inner) : org.tomitribe.crest.table.Line$Builder
+  public method middle(java.lang.String middle) : org.tomitribe.crest.table.Line$Builder
+  public method build() : org.tomitribe.crest.table.Line
+
+# org.tomitribe.crest.table.Data$Cell
+public class org.tomitribe.crest.table.Data$Cell
+  private final field data : java.lang.String
+  private final field row : int
+  private final field column : int
+  private final field width : org.tomitribe.crest.table.Width
+  private final field lines : java.util.List<java.lang.String>
+  public method <init>(org.tomitribe.crest.table.Data this$0, int row, int column, java.lang.String data)
+  private method <init>(org.tomitribe.crest.table.Data this$0, int row, int column, java.lang.String data, java.lang.String[] lines)
+  public method getLines() : void
+  public method getHeight() : int
+  public method getRow() : int
+  public method getColumn() : int
+  public method getWidth() : org.tomitribe.crest.table.Width
+  public method getData() : java.lang.String
+  public method resizeTo(int width) : org.tomitribe.crest.table.Data$Cell
+
+# org.tomitribe.crest.javadoc.Javadoc$Param$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Param$Builder
+  private field name : java.lang.String
+  private field description : java.lang.String
+  method <init>()
+  public method name(java.lang.String name) : org.tomitribe.crest.javadoc.Javadoc$Param$Builder
+  public method description(java.lang.String description) : org.tomitribe.crest.javadoc.Javadoc$Param$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Param
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext$1
+class org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext$1
+implements org.tomitribe.crest.api.interceptor.CrestContext
+  method <init>(org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext this$0, java.lang.reflect.Method arg1, java.util.List arg2, java.lang.String arg3, java.util.List arg4)
+  public method proceed() : java.lang.Object
+  public method getMethod() : java.lang.reflect.Method
+  public method getParameters() : void
+  public method getName() : java.lang.String
+  public method getParameterMetadata() : void
+
+# org.tomitribe.crest.help.Wrap
+public class org.tomitribe.crest.help.Wrap
+  private method <init>()
+  public static method length(java.lang.CharSequence cs) : int
+  public static method isBlank(java.lang.CharSequence cs) : boolean
+  public static method wrap(java.lang.String str, int wrapLength) : java.lang.String
+  public static method wrap(java.lang.String str, int wrapLength, java.lang.String newLineStr, boolean wrapLongWords) : java.lang.String
+  public static method wrap(java.lang.String str, int wrapLength, java.lang.String newLineStr, boolean wrapLongWords, java.lang.String wrapOn) : java.lang.String
+
+# org.tomitribe.crest.contexts.EnvDefaultsContext
+public class org.tomitribe.crest.contexts.EnvDefaultsContext
+implements org.tomitribe.crest.contexts.DefaultsContext
+  public method <init>()
+  public method find(org.tomitribe.crest.cmds.targets.Target cmd, java.lang.reflect.Method commandMethod, java.lang.String key) : java.lang.String
+
+# org.tomitribe.crest.cmds.targets.Substitution
+public class org.tomitribe.crest.cmds.targets.Substitution
+  private static final field DEFAULTS_JVM_CONTEXTS : java.util.Map<java.lang.String, org.tomitribe.crest.contexts.DefaultsContext>
+  private method <init>()
+  public static method format(org.tomitribe.crest.cmds.targets.Target target, java.lang.reflect.Method method, java.lang.String input, org.tomitribe.crest.contexts.DefaultsContext df) : java.lang.String
+  private static method format(org.tomitribe.crest.cmds.targets.Target target, java.lang.reflect.Method method, java.lang.String input, org.tomitribe.crest.contexts.DefaultsContext df, java.util.Set<java.lang.String> seen) : void
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$4
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$4 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.javadoc.Javadoc$Return$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Return$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Return$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Return
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$Throws$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Throws$Builder
+  private field classname : java.lang.String
+  private field description : java.lang.String
+  method <init>()
+  public method classname(java.lang.String classname) : org.tomitribe.crest.javadoc.Javadoc$Throws$Builder
+  public method description(java.lang.String description) : org.tomitribe.crest.javadoc.Javadoc$Throws$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Throws
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Heading
+public class org.tomitribe.crest.help.Heading
+implements org.tomitribe.crest.help.Element
+  private final field content : java.lang.String
+  public method <init>(java.lang.String content)
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Justify
+public class org.tomitribe.crest.help.Justify
+  private final field width : int
+  private field padding : java.util.function.Function<java.lang.String, java.lang.String>
+  public method <init>(int width)
+  public static method wrapAndJustify(java.lang.String text, int width) : java.lang.String
+  private method wrapAndJustify(java.lang.String text) : java.lang.String
+  private method fromLeft(java.lang.String line) : java.lang.String
+  private method fromRight(java.lang.String line) : java.lang.String
+  private method padSentences(java.lang.StringBuilder b, int needed) : int
+
+# org.tomitribe.crest.val.Exists$Constraint
+public class org.tomitribe.crest.val.Exists$Constraint extends org.tomitribe.crest.val.ConstraintAdapter
+  public method <init>()
+  public method isValid(java.io.File value) : boolean
+
+# org.tomitribe.crest.contexts.SystemPropertiesDefaultsContext
+public class org.tomitribe.crest.contexts.SystemPropertiesDefaultsContext
+implements org.tomitribe.crest.contexts.DefaultsContext
+  public method <init>()
+  public method find(org.tomitribe.crest.cmds.targets.Target cmd, java.lang.reflect.Method commandMethod, java.lang.String key) : java.lang.String
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$3
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$3 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$6
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$6 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.CmdMethod$2
+class org.tomitribe.crest.cmds.CmdMethod$2 extends org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext
+  method <init>(org.tomitribe.crest.cmds.CmdMethod this$0, java.util.Map interceptors, java.lang.Class[] interceptorKeys, java.lang.String name, java.util.List parameterMetadatas, java.lang.reflect.Method method, java.util.List parameters)
+  protected method doInvoke(java.util.List<java.lang.Object> parameters) : void
+
+# org.tomitribe.crest.table.Data$Row
+public class org.tomitribe.crest.table.Data$Row
+  private final field row : int
+  private final field width : org.tomitribe.crest.table.Width
+  private final field height : int
+  public method <init>(org.tomitribe.crest.table.Data this$0, int row, org.tomitribe.crest.table.Width width, int height)
+  public method stream() : void
+  public method getRow() : int
+  public method getWidth() : org.tomitribe.crest.table.Width
+  public method getHeight() : int
+  public method length() : int
+  public method toLines() : java.lang.String[][]
+
+# org.tomitribe.crest.javadoc.Javadoc$Deprecated
+public class org.tomitribe.crest.javadoc.Javadoc$Deprecated
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Deprecated$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.interceptor.security.SecurityInterceptor
+public class org.tomitribe.crest.interceptor.security.SecurityInterceptor
+  public method <init>()
+  @org.tomitribe.crest.api.interceptor.CrestInterceptor public method secure(org.tomitribe.crest.api.interceptor.CrestContext crestContext) : java.lang.Object
+
+# org.tomitribe.crest.help.Element
+public interface org.tomitribe.crest.help.Element
+  public method getContent() : java.lang.String
+
+# org.tomitribe.crest.val.ConstraintAdapter
+public class org.tomitribe.crest.val.ConstraintAdapter
+implements javax.validation.ConstraintValidator
+  public method <init>()
+  public method initialize(A constraintAnnotation) : void
+  public method isValid(T value, javax.validation.ConstraintValidatorContext context) : void
+  public method isValid(T value) : void
+
+# org.tomitribe.crest.Exec
+public class org.tomitribe.crest.Exec
+  private method <init>()
+  public static method main(java.lang.String[] args) : void
+    declares java.lang.Exception
+  private static method ignore(int exitCode) : void
+
+# org.tomitribe.crest.cmds.targets.SimpleBean
+public class org.tomitribe.crest.cmds.targets.SimpleBean
+implements org.tomitribe.crest.cmds.targets.Target
+  private final field bean : java.lang.Object
+  public method <init>(java.lang.Object bean)
+  public method invoke(java.lang.reflect.Method method, java.lang.Object[] args) : java.lang.Object
+    declares java.lang.reflect.InvocationTargetException
+    declares java.lang.IllegalAccessException
+  public method getInstance(java.lang.reflect.Method method) : java.lang.Object
+  private method getBean(java.lang.reflect.Method method) : java.lang.Object
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$2
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$2 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.CmdMethod
+public class org.tomitribe.crest.cmds.CmdMethod
+implements org.tomitribe.crest.cmds.Cmd
+  private static final field NO_PREFIX : java.lang.String[]
+  private static final field STRING_NAME_CALLBACK : org.tomitribe.util.Join$NameCallback<java.lang.String>
+  private final field target : org.tomitribe.crest.cmds.targets.Target
+  private final field method : java.lang.reflect.Method
+  private final field name : java.lang.String
+  private final field parameters : java.util.List<org.tomitribe.crest.cmds.processors.Param>
+  private final field interceptors : java.lang.Class<?>[]
+  private final field defaultsFinder : org.tomitribe.crest.contexts.DefaultsContext
+  private final field spec : org.tomitribe.crest.cmds.CmdMethod$Spec
+  private field parameterMetadatas : java.util.List<org.tomitribe.crest.api.interceptor.ParameterMetadata>
+  public method <init>(java.lang.reflect.Method method, org.tomitribe.crest.contexts.DefaultsContext defaultsFinder)
+  public method <init>(java.lang.reflect.Method method, org.tomitribe.crest.cmds.targets.Target target, org.tomitribe.crest.contexts.DefaultsContext defaultsFinder)
+  private method buildParams(java.lang.String globalDescription, java.lang.String[] inPrefixes, org.tomitribe.crest.api.Defaults$DefaultMapping[] defaultsMapping, java.lang.Iterable<org.tomitribe.util.reflect.Parameter> params) : void
+  public method <init>(java.lang.reflect.Method method, org.tomitribe.crest.cmds.targets.Target target)
+  public method getMethod() : java.lang.reflect.Method
+  public method getArgumentParameters() : void
+  private method validate() : void
+  public method getUsage() : java.lang.String
+  private method usage() : java.lang.String
+  public method getName() : java.lang.String
+  public method exec(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> globalInterceptors, java.lang.String[] rawArgs) : void
+  public method exec(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> globalInterceptors, java.util.List<java.lang.Object> list) : void
+  private method buildApiParameterViews(java.util.List<org.tomitribe.crest.cmds.processors.Param> parameters) : void
+  protected method doInvoke(java.util.List<java.lang.Object> list) : void
+  private method reportWithHelp(java.lang.Exception e) : void
+  public static method toRuntimeException(java.lang.Throwable e) : java.lang.RuntimeException
+  public method getOptionParameters() : void
+  public method getSpec() : org.tomitribe.crest.cmds.CmdMethod$Spec
+  public method manual(java.io.PrintStream out) : void
+  public static method has(java.util.List<?> list) : void
+  public method help(java.io.PrintStream out) : void
+  public method parse(java.lang.String[] rawArgs) : void
+  private method convert(org.tomitribe.crest.cmds.CmdMethod$Arguments args) : void
+  private method toArgs(java.util.List<org.tomitribe.crest.cmds.CmdMethod$Value> converted) : void
+  private method convert(org.tomitribe.crest.cmds.CmdMethod$Arguments args, org.tomitribe.crest.cmds.CmdMethod$Needed needed, java.util.List<org.tomitribe.crest.cmds.processors.Param> parameters1) : void
+  private method fillOptionParameter(org.tomitribe.crest.cmds.CmdMethod$Arguments args, org.tomitribe.crest.cmds.processors.Param parameter, java.lang.String name) : org.tomitribe.crest.cmds.CmdMethod$Value
+  private method fillPlainParameter(org.tomitribe.crest.cmds.CmdMethod$Arguments args, org.tomitribe.crest.cmds.CmdMethod$Needed needed, org.tomitribe.crest.cmds.processors.Param parameter) : org.tomitribe.crest.cmds.CmdMethod$Value
+  private static method convert(org.tomitribe.crest.cmds.processors.Param parameter, java.util.List<java.lang.String> values, java.lang.String name) : void
+  private static method isBoolean(java.util.List<java.lang.String> values) : void
+  public static method instantiate(java.lang.Class<? extends java.util.Collection> aClass) : void
+  public method getDefaults() : void
+  public method toString() : java.lang.String
+  public method complete(java.lang.String buffer, int cursorPosition) : void
+  private method findMatcingParametersOptions(java.lang.String prefix, boolean isIncludeAliasChar) : void
+  private method findMatchingAliasOptions(java.lang.String prefix, boolean isIncludeAliasChar) : void
+  private method findMatchingOptions(java.lang.String prefix, boolean isIncludeAliasChar) : void
+
+# org.tomitribe.crest.javadoc.Javadoc$Since$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Since$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Since$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Since
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Builder
+  private field content : java.lang.String
+  private field params : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Param>
+  private field throwing : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Throws>
+  private field authors : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Author>
+  private field sees : java.util.List<org.tomitribe.crest.javadoc.Javadoc$See>
+  private field unknown : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Tag>
+  private field aReturn : org.tomitribe.crest.javadoc.Javadoc$Return
+  private field since : org.tomitribe.crest.javadoc.Javadoc$Since
+  private field version : org.tomitribe.crest.javadoc.Javadoc$Version
+  private field deprecated : org.tomitribe.crest.javadoc.Javadoc$Deprecated
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method param(org.tomitribe.crest.javadoc.Javadoc$Param param) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method params(java.util.List<org.tomitribe.crest.javadoc.Javadoc$Param> params) : void
+  public method unknown(org.tomitribe.crest.javadoc.Javadoc$Tag tag) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method unknown(java.util.List<org.tomitribe.crest.javadoc.Javadoc$Tag> tags) : void
+  public method throwing(java.util.List<org.tomitribe.crest.javadoc.Javadoc$Throws> throwing) : void
+  public method throwing(org.tomitribe.crest.javadoc.Javadoc$Throws throwing) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method author(org.tomitribe.crest.javadoc.Javadoc$Author author) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method authors(java.util.List<org.tomitribe.crest.javadoc.Javadoc$Author> authors) : void
+  public method see(org.tomitribe.crest.javadoc.Javadoc$See see) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method sees(java.util.List<org.tomitribe.crest.javadoc.Javadoc$See> sees) : void
+  public method aReturn(org.tomitribe.crest.javadoc.Javadoc$Return aReturn) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method since(org.tomitribe.crest.javadoc.Javadoc$Since since) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method deprecated(org.tomitribe.crest.javadoc.Javadoc$Deprecated deprecated) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method version(org.tomitribe.crest.javadoc.Javadoc$Version version) : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.DocumentParser$ReadingBullet
+class org.tomitribe.crest.help.DocumentParser$ReadingBullet
+implements org.tomitribe.crest.help.DocumentParser$State
+  private final field lines : java.util.List<java.lang.String>
+  private final field continued : java.util.regex.Pattern
+  public method <init>(org.tomitribe.crest.help.DocumentParser arg0, java.lang.String bullet)
+  public method process(java.lang.String line) : void
+  public method terminate() : void
+
+# org.tomitribe.crest.help.InvalidJavadocFileException
+public class org.tomitribe.crest.help.InvalidJavadocFileException extends java.lang.IllegalStateException
+  public method <init>(java.lang.String resourceFileName, java.io.IOException e)
+
+# org.tomitribe.crest.EditorLoader
+public class org.tomitribe.crest.EditorLoader
+  private method <init>()
+  public static method load() : void
+  private static method thisArchive() : org.apache.xbean.finder.archive.Archive
+  private static method cpArchive() : org.apache.xbean.finder.archive.Archive
+
+# org.tomitribe.crest.cmds.CmdMethod$Value
+public final class org.tomitribe.crest.cmds.CmdMethod$Value
+  private final field value : java.lang.Object
+  private final field provided : boolean
+  protected method <init>(java.lang.Object value, boolean provided)
+  public method getValue() : java.lang.Object
+  public method isProvided() : boolean
+
+# org.tomitribe.crest.cmds.processors.Help
+public class org.tomitribe.crest.cmds.processors.Help
+  private final field commands : java.util.Map<java.lang.String, org.tomitribe.crest.cmds.Cmd>
+  public method <init>(java.util.Map<java.lang.String, org.tomitribe.crest.cmds.Cmd> commands1)
+  public static method optionHelp(java.lang.reflect.Method method, java.lang.String commandName, java.util.Collection<org.tomitribe.crest.cmds.processors.OptionParam> optionParams, java.io.PrintStream out) : void
+  public static method getItems(java.lang.reflect.Method method, java.lang.String commandName, java.util.Collection<org.tomitribe.crest.cmds.processors.OptionParam> optionParams) : void
+  private static method trimDescriptions(org.tomitribe.crest.cmds.processors.Item item) : org.tomitribe.crest.cmds.processors.Item
+  public static method getItems(java.lang.reflect.Method method, java.lang.String commandName, java.util.Collection<org.tomitribe.crest.cmds.processors.OptionParam> optionParams, org.tomitribe.crest.help.CommandJavadoc commandJavadoc) : void
+  public static method getItems(java.lang.Class<?> clazz, java.lang.String commandName, java.util.Collection<org.tomitribe.crest.cmds.processors.OptionParam> optionParams) : void
+  public static method getResourceBundle(java.lang.Class<?> clazz) : void
+  public static method getDescription(java.util.ResourceBundle general, java.lang.String commandName, java.lang.String name) : java.lang.String
+  @org.tomitribe.crest.api.Command public method help() : java.lang.String
+  @org.tomitribe.crest.api.Command public method help(java.lang.String name) : java.lang.String
+  @org.tomitribe.crest.api.Command public method help(java.lang.String name, java.lang.String subCommand) : java.lang.String
+
+# org.tomitribe.crest.table.Width
+public class org.tomitribe.crest.table.Width
+  public static final field ZERO : org.tomitribe.crest.table.Width
+  private final field min : int
+  private final field max : int
+  public method <init>(int min, int max)
+  public method toMin() : org.tomitribe.crest.table.Width
+  public method toMax() : org.tomitribe.crest.table.Width
+  public static method ofString(java.lang.String string) : org.tomitribe.crest.table.Width
+  public method adjust(org.tomitribe.crest.table.Width that) : org.tomitribe.crest.table.Width
+  public method add(org.tomitribe.crest.table.Width that) : org.tomitribe.crest.table.Width
+  public method subtract(org.tomitribe.crest.table.Width that) : org.tomitribe.crest.table.Width
+  public method getMin() : int
+  public method getMax() : int
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.table.Border$1
+class org.tomitribe.crest.table.Border$1
+
+# org.tomitribe.crest.Main
+public class org.tomitribe.crest.Main
+implements org.tomitribe.crest.cmds.Completer
+  protected final field commands : java.util.Map<java.lang.String, org.tomitribe.crest.cmds.Cmd>
+  protected final field interceptors : java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor>
+  public method <init>()
+  public method <init>(java.lang.Class<?>[] classes)
+  public method <init>(org.tomitribe.crest.contexts.DefaultsContext defaultsContext, java.lang.Class<?>[] classes)
+  public method <init>(org.tomitribe.crest.contexts.DefaultsContext defaultsContext, java.lang.Iterable<java.lang.Class<?>> classes)
+  public method processClass(org.tomitribe.crest.contexts.DefaultsContext defaultsContext, java.lang.Class<?> clazz) : void
+  public method <init>(java.lang.Iterable<java.lang.Class<?>> classes)
+  public method add(org.tomitribe.crest.cmds.Cmd cmd) : void
+  public method remove(org.tomitribe.crest.cmds.Cmd cmd) : void
+  private method installHelp(org.tomitribe.crest.contexts.DefaultsContext dc) : void
+  public static method main(java.lang.String[] args) : void
+    declares java.lang.Exception
+  public static method main(org.tomitribe.crest.environments.Environment env, java.util.function.Consumer<java.lang.Integer> onExit, java.lang.String[] args) : void
+  private static method handle(org.tomitribe.crest.environments.Environment env, java.util.function.Consumer<java.lang.Integer> onExit, java.lang.Throwable cause) : void
+  public method main(org.tomitribe.crest.environments.Environment env, java.lang.String[] args) : void
+    declares java.lang.Exception
+  public method exec(java.lang.String[] args) : java.lang.Object
+    declares java.lang.Exception
+  public static method processSystemProperties(java.lang.String[] args) : void
+  public method complete(java.lang.String buffer, int cursorPosition) : void
+  private method getCmd(java.lang.String buffer) : org.tomitribe.crest.cmds.Cmd
+
+# org.tomitribe.crest.javadoc.Javadoc$Version
+public class org.tomitribe.crest.javadoc.Javadoc$Version
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Version$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Document$1
+class org.tomitribe.crest.help.Document$1
+
+# org.tomitribe.crest.val.Executable$Constraint
+public class org.tomitribe.crest.val.Executable$Constraint extends org.tomitribe.crest.val.ConstraintAdapter
+  public method <init>()
+  public method isValid(java.io.File value) : boolean
+
+# org.tomitribe.crest.BashCompletion
+public class org.tomitribe.crest.BashCompletion
+  private static final field COMPLETER : java.lang.String
+  final field out : org.tomitribe.util.PrintString
+  private final field main : org.tomitribe.crest.Main
+  private field mainCommand : java.lang.String
+  public method <init>(org.tomitribe.crest.Main main)
+  @org.tomitribe.crest.api.Command public method _completer(boolean toFile) : java.lang.String
+  @org.tomitribe.crest.api.Command public method _completer(boolean toFile, java.lang.String name) : java.lang.String
+  private method asFile() : java.lang.String
+  private method getMainCommandName(java.lang.String[] args) : java.lang.String
+  private method guessName() : java.lang.String
+  private method asFilename(java.lang.String name) : java.lang.String
+  public static method generate(org.tomitribe.crest.Main main, java.lang.String[] args) : java.lang.String
+  private method cmd(int depth, java.lang.String group, org.tomitribe.crest.cmds.Cmd cmd) : void
+  private method cmdGroup(org.tomitribe.crest.cmds.CmdGroup cmdGroup, java.lang.String group, int depth) : void
+  private method overloadedCmdMethod(org.tomitribe.crest.cmds.OverloadedCmdMethod overloadedCmdMethod, java.lang.String group) : void
+  private method cmdMethod(org.tomitribe.crest.cmds.CmdMethod cmdMethod, java.lang.String group) : void
+  private method proposeFlags(org.tomitribe.crest.cmds.CmdMethod$Spec spec) : void
+  private static method hasFlags(org.tomitribe.crest.cmds.CmdMethod$Spec spec) : boolean
+  private method guessValues(org.tomitribe.crest.cmds.processors.OptionParam param) : void
+  private static method getDefaults(org.tomitribe.crest.cmds.processors.OptionParam param) : void
+  private method isNonFile(java.lang.Class<?> type) : void
+  private method flag(java.lang.String s) : java.lang.String
+  private method quote(T t) : void
+  private method getFunctionName(java.lang.String group, org.tomitribe.crest.cmds.Cmd cmd) : java.lang.String
+  private method proposeFiles() : void
+  private method proposeFlags() : void
+  private method proposeFlagValues() : void
+  private method proposeFlagValuesFiles() : void
+  private method utilities() : void
+  private method group(int depth, java.lang.String functionName, java.util.Collection<org.tomitribe.crest.cmds.Cmd> commands) : void
+
+# org.tomitribe.crest.cmds.utils.CommandLine
+public class org.tomitribe.crest.cmds.utils.CommandLine
+  private method <init>()
+  public static method translateCommandline(java.lang.String toProcess) : java.lang.String[]
+
+# org.tomitribe.crest.cmds.processors.Help$1
+class org.tomitribe.crest.cmds.processors.Help$1
+implements java.util.Comparator
+  method <init>(org.tomitribe.crest.cmds.processors.Help this$0)
+  public method compare(java.lang.String s1, java.lang.String s2) : int
+
+# org.tomitribe.crest.lang.Substitutor
+public abstract class org.tomitribe.crest.lang.Substitutor
+  private static final field ESCAPE : char
+  private static final field PREFIX : char[]
+  private static final field SUFFIX : char[]
+  private static final field VALUE_DELIMITER : char[]
+  public method <init>()
+  public method replace(java.lang.String source) : java.lang.String
+  private method substitute(java.lang.StringBuilder buf, int offset, int length, java.util.List<java.lang.String> priorVariables) : void
+  protected method getOrDefault(java.lang.String arg0, java.lang.String arg1) : java.lang.String
+  private method isMatch(char[] chars, char[] buffer, int pos, int bufferEnd) : int
+  private method checkCyclicSubstitution(java.lang.String varName, java.util.List<java.lang.String> priorVariables) : void
+  private method appendWithSeparators(java.lang.StringBuilder builder, java.util.Collection<java.lang.String> iterable) : void
+
+# org.tomitribe.crest.table.Border
+public class org.tomitribe.crest.table.Border
+  private final field first : org.tomitribe.crest.table.Line
+  private final field last : org.tomitribe.crest.table.Line
+  private final field header : org.tomitribe.crest.table.Line
+  private final field inner : org.tomitribe.crest.table.Line
+  private final field row : org.tomitribe.crest.table.Line
+  public method <init>(org.tomitribe.crest.table.Line first, org.tomitribe.crest.table.Line last, org.tomitribe.crest.table.Line header, org.tomitribe.crest.table.Line inner, org.tomitribe.crest.table.Line row)
+  public method getRowFormat(java.util.List<org.tomitribe.crest.table.Data$Column> columns) : void
+  public method getFirst() : org.tomitribe.crest.table.Line
+  public method getLast() : org.tomitribe.crest.table.Line
+  public method getHeader() : org.tomitribe.crest.table.Line
+  public method getInner() : org.tomitribe.crest.table.Line
+  public method getRow() : org.tomitribe.crest.table.Line
+  public method getWidth(int columns) : org.tomitribe.crest.table.Width
+  public static method whitespaceSeparated() : org.tomitribe.crest.table.Border$Builder
+  public static method whitespaceCompact() : org.tomitribe.crest.table.Border$Builder
+  public static method mysqlStyle() : org.tomitribe.crest.table.Border$Builder
+  public static method asciiSeparated() : org.tomitribe.crest.table.Border$Builder
+  public static method asciiCompact() : org.tomitribe.crest.table.Border$Builder
+  public static method githubMarkdown() : org.tomitribe.crest.table.Border$Builder
+  public static method redditMarkdown() : org.tomitribe.crest.table.Border$Builder
+  public static method reStructuredTextGrid() : org.tomitribe.crest.table.Border$Builder
+  public static method reStructuredTextSimple() : org.tomitribe.crest.table.Border$Builder
+  public static method asciiDots() : org.tomitribe.crest.table.Border$Builder
+  public static method unicodeDouble() : org.tomitribe.crest.table.Border$Builder
+  public static method unicodeSingle() : org.tomitribe.crest.table.Border$Builder
+  public static method unicodeSingleSeparated() : org.tomitribe.crest.table.Border$Builder
+  public static method builder() : org.tomitribe.crest.table.Border$Builder
+
+# org.tomitribe.crest.javadoc.Javadoc$Author$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Author$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Author$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Author
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Paragraph
+public class org.tomitribe.crest.help.Paragraph
+implements org.tomitribe.crest.help.Element
+  private final field content : java.lang.String
+  public method getContent() : java.lang.String
+  public method <init>(java.lang.String content)
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.DocumentParser$ReadingPreformatted
+class org.tomitribe.crest.help.DocumentParser$ReadingPreformatted
+implements org.tomitribe.crest.help.DocumentParser$State
+  private final field lines : java.util.List<java.lang.String>
+  private method <init>(org.tomitribe.crest.help.DocumentParser arg0)
+  public method process(java.lang.String line) : void
+  public method terminate() : void
+
+# org.tomitribe.crest.help.DocumentParser$ReadingParagraph
+class org.tomitribe.crest.help.DocumentParser$ReadingParagraph
+implements org.tomitribe.crest.help.DocumentParser$State
+  private final field lines : java.util.List<java.lang.String>
+  private method <init>(org.tomitribe.crest.help.DocumentParser arg0)
+  public method process(java.lang.String line) : void
+  public method terminate() : void
+
+# org.tomitribe.crest.help.HtmlDocumentParser
+public class org.tomitribe.crest.help.HtmlDocumentParser
+  public static method parse(java.lang.String content) : org.tomitribe.crest.help.Document
+  private method <init>()
+  static method isHtml(java.lang.String content) : boolean
+
+# org.tomitribe.crest.val.Writable$Constraint
+public class org.tomitribe.crest.val.Writable$Constraint extends org.tomitribe.crest.val.ConstraintAdapter
+  public method <init>()
+  public method isValid(java.io.File value) : boolean
+
+# org.tomitribe.crest.environments.Environment
+public interface org.tomitribe.crest.environments.Environment
+  public static final field ENVIRONMENT_THREAD_LOCAL : java.lang.ThreadLocal<org.tomitribe.crest.environments.Environment>
+  public method getOutput() : java.io.PrintStream
+  public method getError() : java.io.PrintStream
+  public method getInput() : java.io.InputStream
+  public method getProperties() : java.util.Properties
+  public method getEnv() : void
+  public method findService(java.lang.Class<> arg0) : void
+
+# org.tomitribe.crest.cmds.CmdMethod$Needed
+public class org.tomitribe.crest.cmds.CmdMethod$Needed
+  private field count : int
+  public method <init>(org.tomitribe.crest.cmds.CmdMethod this$0, int count)
+
+# org.tomitribe.crest.cmds.processors.Item
+public class org.tomitribe.crest.cmds.processors.Item
+  private final field flag : java.lang.String
+  private final field note : java.util.List<java.lang.String>
+  private final field description : java.lang.String
+  private final field param : org.tomitribe.crest.cmds.processors.OptionParam
+  public method <init>(java.lang.String flag, java.lang.String description, org.tomitribe.crest.cmds.processors.OptionParam param, java.util.List<java.lang.String> notes)
+  method <init>(org.tomitribe.crest.cmds.processors.OptionParam p, java.lang.String description)
+  public method getParam() : org.tomitribe.crest.cmds.processors.OptionParam
+  private method getAlias(java.util.List<java.lang.String> aliasList, boolean withDemiliter, boolean isBooleanValue) : void
+  public method getFlag() : java.lang.String
+  public method getNote() : void
+  public method getDescription() : java.lang.String
+
+# org.tomitribe.crest.cmds.OverloadedCmdMethod$1
+class org.tomitribe.crest.cmds.OverloadedCmdMethod$1
+implements java.util.Comparator
+  method <init>(org.tomitribe.crest.cmds.OverloadedCmdMethod this$0)
+  public method compare(org.tomitribe.crest.cmds.CmdMethod a, org.tomitribe.crest.cmds.CmdMethod b) : int
+
+# org.tomitribe.crest.table.Resize
+public class org.tomitribe.crest.table.Resize
+  private method <init>()
+  public static method resize(org.tomitribe.crest.table.Data data, int width) : org.tomitribe.crest.table.Data
+  private static method expand(java.util.List<org.tomitribe.crest.table.Resize$Column> columns) : void
+
+# org.tomitribe.crest.javadoc.Javadoc$Author
+public class org.tomitribe.crest.javadoc.Javadoc$Author
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Author$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.interceptor.internal.InternalInterceptor
+public class org.tomitribe.crest.interceptor.internal.InternalInterceptor
+  private final field target : org.tomitribe.crest.cmds.targets.Target
+  private final field method : java.lang.reflect.Method
+  public method <init>(org.tomitribe.crest.cmds.targets.Target target, java.lang.reflect.Method method)
+  public method intercept(org.tomitribe.crest.api.interceptor.CrestContext crestContext) : java.lang.Object
+  private static method throwRuntime(java.lang.Throwable cause) : java.lang.Object
+
+# org.tomitribe.crest.help.Preformatted
+public class org.tomitribe.crest.help.Preformatted
+implements org.tomitribe.crest.help.Element
+  private final field content : java.lang.String
+  public method <init>(java.lang.String content)
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Document
+public class org.tomitribe.crest.help.Document
+  final field elements : java.util.List<org.tomitribe.crest.help.Element>
+  private method <init>(java.util.List<org.tomitribe.crest.help.Element> elements)
+  public method getElements() : void
+  public static method builder() : org.tomitribe.crest.help.Document$Builder
+
+# org.tomitribe.crest.val.Readable
+public interface org.tomitribe.crest.val.Readable
+implements java.lang.annotation.Annotation
+@java.lang.annotation.Documented
+@javax.validation.Constraint
+@java.lang.annotation.Target
+@java.lang.annotation.Retention
+  public method groups() : void
+  public method message() : java.lang.String
+  public method payload() : void
+
+# org.tomitribe.crest.environments.Environment$1
+final class org.tomitribe.crest.environments.Environment$1 extends java.lang.ThreadLocal
+  method <init>()
+  protected method initialValue() : org.tomitribe.crest.environments.Environment
+
+# org.tomitribe.crest.cmds.Completer
+public interface org.tomitribe.crest.cmds.Completer
+  public method complete(java.lang.String arg0, int arg1) : void
+
+# org.tomitribe.crest.cmds.processors.Param
+public class org.tomitribe.crest.cmds.processors.Param extends org.tomitribe.util.reflect.Parameter
+  private field apiView : org.tomitribe.crest.api.interceptor.ParameterMetadata
+  public method <init>(org.tomitribe.util.reflect.Parameter parameter)
+  public method getDisplayType() : java.lang.String
+  public method isListable() : boolean
+  public method getListableType() : java.lang.Class
+  public method getApiView() : org.tomitribe.crest.api.interceptor.ParameterMetadata
+  public method setApiView(org.tomitribe.crest.api.interceptor.ParameterMetadata apiView) : void
+
+# org.tomitribe.crest.cmds.MissingArgumentException
+public class org.tomitribe.crest.cmds.MissingArgumentException extends java.lang.IllegalArgumentException
+@org.tomitribe.crest.api.Exit
+  public method <init>(java.lang.String s)
+
+# org.tomitribe.crest.javadoc.Javadoc$See
+public class org.tomitribe.crest.javadoc.Javadoc$See
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$See$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext
+public abstract class org.tomitribe.crest.interceptor.internal.InternalInterceptorInvocationContext
+  private final field interceptors : java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor>
+  private final field context : org.tomitribe.crest.api.interceptor.CrestContext
+  private final field interceptorKeys : java.lang.Class<?>[]
+  private field parameters : java.util.List<java.lang.Object>
+  private field index : int
+  public method <init>(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> interceptors, java.lang.Class<?>[] interceptorKeys, java.lang.String name, java.util.List<org.tomitribe.crest.api.interceptor.ParameterMetadata> parameterMetadatas, java.lang.reflect.Method method, java.util.List<java.lang.Object> parameters)
+  public method proceed() : java.lang.Object
+  protected method doInvoke(java.util.List<java.lang.Object> arg0) : void
+
+# org.tomitribe.crest.val.Writable
+public interface org.tomitribe.crest.val.Writable
+implements java.lang.annotation.Annotation
+@java.lang.annotation.Documented
+@javax.validation.Constraint
+@java.lang.annotation.Target
+@java.lang.annotation.Retention
+  public method groups() : void
+  public method message() : java.lang.String
+  public method payload() : void
+
+# org.tomitribe.crest.val.Directory
+public interface org.tomitribe.crest.val.Directory
+implements java.lang.annotation.Annotation
+@org.tomitribe.crest.val.Exists
+@java.lang.annotation.Documented
+@javax.validation.Constraint
+@java.lang.annotation.Target
+@java.lang.annotation.Retention
+  public method groups() : void
+  public method message() : java.lang.String
+  public method payload() : void
+
+# org.tomitribe.crest.val.Directory$Constraint
+public class org.tomitribe.crest.val.Directory$Constraint extends org.tomitribe.crest.val.ConstraintAdapter
+  public method <init>()
+  public method isValid(java.io.File value) : boolean
+
+# org.tomitribe.crest.val.BVal05
+public class org.tomitribe.crest.val.BVal05
+implements org.tomitribe.crest.val.BeanValidation$BeanValidationImpl
+  private static final field NO_GROUP : java.lang.Class<?>[]
+  private final field unwrapClass : java.lang.Class<?>
+  private final field providerClass : java.lang.Class<?>
+  private final field validateMethodParameters : java.lang.reflect.Method
+  private final field validateConstructorParamters : java.lang.reflect.Method
+  private final field byProviderMethod : java.lang.reflect.Method
+  public method <init>()
+  public method validateParameters(java.lang.Object instanceOrClass, java.lang.reflect.Method method, java.lang.Object[] parameters) : void
+  public method validateParameters(java.lang.reflect.Constructor constructor, java.lang.Object[] parameters) : void
+  private method getValidatorObject() : java.lang.Object
+
+# org.tomitribe.crest.environments.SystemEnvironment
+public class org.tomitribe.crest.environments.SystemEnvironment
+implements org.tomitribe.crest.environments.Environment
+  private final field services : java.util.Map<java.lang.Class<?>, java.lang.Object>
+  public method <init>(java.util.Map<java.lang.Class<?>, java.lang.Object> services)
+  public method <init>()
+  public method getOutput() : java.io.PrintStream
+  public method getError() : java.io.PrintStream
+  public method getInput() : java.io.InputStream
+  public method getProperties() : java.util.Properties
+  public method findService(java.lang.Class<> type) : void
+
+# org.tomitribe.crest.cmds.CmdGroup
+public class org.tomitribe.crest.cmds.CmdGroup
+implements org.tomitribe.crest.cmds.Cmd
+  final field name : java.lang.String
+  final field commands : java.util.Map<java.lang.String, org.tomitribe.crest.cmds.Cmd>
+  public method <init>(java.lang.Class<?> owner, java.util.Map<java.lang.String, org.tomitribe.crest.cmds.Cmd> commands)
+  public method getCommands() : void
+  public method getUsage() : java.lang.String
+  public method getName() : java.lang.String
+  public method exec(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> globalInterceptors, java.lang.String[] rawArgs) : void
+  private method report(E e) : void
+  public method help(java.io.PrintStream out) : void
+  public method help(java.lang.String subCommand, java.io.PrintStream out) : void
+  public method manual(java.lang.String subCommand, java.io.PrintStream out) : void
+  public method complete(java.lang.String buffer, int cursorPosition) : void
+
+# org.tomitribe.crest.table.Data$Column
+public class org.tomitribe.crest.table.Data$Column
+  private final field index : int
+  private final field width : org.tomitribe.crest.table.Width
+  private final field numeric : boolean
+  public method <init>(org.tomitribe.crest.table.Data this$0, int index, org.tomitribe.crest.table.Width width, boolean numeric)
+  public method getIndex() : int
+  public method getWidth() : org.tomitribe.crest.table.Width
+  public method isNumeric() : boolean
+  public method stream() : void
+
+# org.tomitribe.crest.table.Resize$Column
+public class org.tomitribe.crest.table.Resize$Column
+  private final field column : org.tomitribe.crest.table.Data$Column
+  private final field remaining : java.util.concurrent.atomic.AtomicInteger
+  private field size : int
+  public method <init>(org.tomitribe.crest.table.Data$Column column, java.util.concurrent.atomic.AtomicInteger remaining)
+  public method expand() : boolean
+  public method resize() : void
+
+# org.tomitribe.crest.javadoc.Javadoc$Version$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Version$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Version$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Version
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.EditorLoader$1
+class org.tomitribe.crest.EditorLoader$1
+
+# org.tomitribe.crest.help.DocumentParser$State
+public interface org.tomitribe.crest.help.DocumentParser$State
+  public method process(java.lang.String arg0) : void
+  public method terminate() : void
+
+# org.tomitribe.crest.term.Screen
+public class org.tomitribe.crest.term.Screen
+  private method <init>()
+  public static method exec() : java.lang.String
+    declares java.io.IOException
+  public static method guessWidth() : int
+  public static method parseWidth(java.lang.String output) : int
+  public static method exec(boolean redirectInput, java.lang.String[] cmd) : java.lang.String
+    declares java.io.IOException
+  public static method waitAndCapture(java.lang.Process p) : java.lang.String
+    declares java.io.IOException
+    declares java.lang.InterruptedException
+  private static method close(java.io.Closeable[] closeables) : void
+
+# org.tomitribe.crest.cmds.CmdMethod$ComplexParam
+class org.tomitribe.crest.cmds.CmdMethod$ComplexParam extends org.tomitribe.crest.cmds.processors.Param
+  private final field parameters : java.util.List<org.tomitribe.crest.cmds.processors.Param>
+  private final field constructor : java.lang.reflect.Constructor<?>
+  private final field nullable : boolean
+  private method <init>(org.tomitribe.crest.cmds.CmdMethod arg0, java.lang.String[] prefixes, java.lang.String globalDescription, org.tomitribe.crest.api.Defaults$DefaultMapping[] defaults, org.tomitribe.util.reflect.Parameter parent, boolean nullable)
+  public method convert(org.tomitribe.crest.cmds.CmdMethod$Arguments arguments, org.tomitribe.crest.cmds.CmdMethod$Needed needed) : org.tomitribe.crest.cmds.CmdMethod$Value
+
+# org.tomitribe.crest.cmds.processors.Commands
+public class org.tomitribe.crest.cmds.processors.Commands
+  private method <init>()
+  public static method commands(java.lang.Class<?> clazz) : void
+  public static method get(java.lang.Object bean) : void
+  public static method get(java.lang.Object bean, org.tomitribe.crest.contexts.DefaultsContext dc) : void
+  public static method get(java.lang.Class<?> clazz) : void
+  public static method get(java.lang.Class<?> clazz, org.tomitribe.crest.contexts.DefaultsContext dc) : void
+  public static method get(java.lang.Class<?> clazz, org.tomitribe.crest.cmds.targets.Target target, org.tomitribe.crest.contexts.DefaultsContext dc) : void
+  public static method name(java.lang.reflect.Method method) : java.lang.String
+  public static method name(java.lang.Class<?> clazz) : void
+  public static method value(java.lang.String value, java.lang.String defaultValue) : java.lang.String
+  public static method load() : void
+  private static method normalize(java.lang.String line) : java.lang.String
+  private static method addAll(java.util.LinkedHashSet<java.lang.Class<?>> classes, java.util.Iterator<? extends java.lang.Iterable<java.lang.Class<?>>> all) : void
+
+# org.tomitribe.crest.table.Lines
+public class org.tomitribe.crest.table.Lines
+  private static final field separator : java.util.regex.Pattern
+  private method <init>()
+  public static method split(java.lang.String string) : java.lang.String[]
+  public static method join(java.util.List<java.lang.Object> list) : void
+  public static method join(java.lang.Object[] list) : java.lang.String
+  public static method center(java.lang.String string, int width) : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$Tag$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Tag$Builder
+  private field name : java.lang.String
+  private field content : java.lang.String
+  method <init>()
+  public method name(java.lang.String name) : org.tomitribe.crest.javadoc.Javadoc$Tag$Builder
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Tag$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Tag
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$See$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$See$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$See$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$See
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Highlight
+public class org.tomitribe.crest.help.Highlight
+  private final field flags : java.util.regex.Pattern
+  private final field code : java.util.regex.Pattern
+  public method <init>(java.util.List<org.tomitribe.crest.help.Option> options)
+  static method flags(java.util.List<org.tomitribe.crest.help.Option> options) : void
+  public method highlight(java.lang.String text) : java.lang.String
+  public method matches(java.lang.String text) : java.lang.String
+  private method matches(java.lang.String text, java.util.regex.Pattern code) : java.lang.String
+
+# org.tomitribe.crest.val.BeanValidation11
+public class org.tomitribe.crest.val.BeanValidation11
+implements org.tomitribe.crest.val.BeanValidation$BeanValidationImpl
+  private final field validatorFactory : javax.validation.ValidatorFactory
+  public method <init>()
+  public method validateParameters(java.lang.Object instanceOrClass, java.lang.reflect.Method method, java.lang.Object[] parameters) : void
+  public method validateParameters(java.lang.reflect.Constructor constructor, java.lang.Object[] parameters) : void
+
+# org.tomitribe.crest.converters.Converter
+public class org.tomitribe.crest.converters.Converter
+  private method <init>()
+  public static method convert(java.lang.Object value, java.lang.Class<?> targetType, java.lang.String name) : void
+  private static method create(java.lang.Class<?> type, java.lang.String value) : void
+  private static method isInvalidMethod(java.lang.Class<?> type, java.lang.reflect.Method method) : void
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$8
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$8 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.processors.Commands$Loader
+public interface org.tomitribe.crest.cmds.processors.Commands$Loader
+implements java.lang.Iterable
+@java.lang.Deprecated
+
+# org.tomitribe.crest.cmds.processors.OptionParam
+public class org.tomitribe.crest.cmds.processors.OptionParam extends org.tomitribe.crest.cmds.processors.Param
+  public static final field LIST_SEPARATOR : java.lang.String
+  public static final field LIST_TYPE : java.lang.String
+  private final field name : java.lang.String
+  private final field defaultValue : java.lang.String
+  private final field description : java.lang.String
+  public method <init>(org.tomitribe.util.reflect.Parameter parameter, java.lang.String name, java.lang.String defaultVal, java.lang.String description)
+  public method getDescription() : java.lang.String
+  public static method getSeparatedValues(java.lang.String value) : void
+  private method initDefault() : java.lang.String
+  public static method normalizeDefaultValue(java.lang.String value) : java.lang.String
+  public method getName() : java.lang.String
+  public method getDefaultValue() : java.lang.String
+  public method getDefaultValues() : void
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.cmds.processors.Commands$1
+final class org.tomitribe.crest.cmds.processors.Commands$1
+implements org.tomitribe.util.collect.FilteredIterator$Filter
+  method <init>()
+  public method accept(java.lang.reflect.Method method) : boolean
+
+# org.tomitribe.crest.table.Data
+public class org.tomitribe.crest.table.Data
+  private final field rows : org.tomitribe.crest.table.Data$Row[]
+  private final field columns : org.tomitribe.crest.table.Data$Column[]
+  private final field cells : org.tomitribe.crest.table.Data$Cell[][]
+  private final field width : org.tomitribe.crest.table.Width
+  private final field height : int
+  private final field heading : boolean
+  public method <init>(java.lang.String[][] data, boolean headings)
+  method <init>(org.tomitribe.crest.table.Data$Cell[][] cells, org.tomitribe.crest.table.Data previous)
+  public method hasHeading() : boolean
+  public method getWidth() : org.tomitribe.crest.table.Width
+  public method getHeight() : int
+  public method getColumns() : void
+  public method getRows() : void
+  public method getColumn(int i) : org.tomitribe.crest.table.Data$Column
+  public method getRow(int i) : org.tomitribe.crest.table.Data$Row
+  public static method builder() : org.tomitribe.crest.table.Data$Builder
+
+# org.tomitribe.crest.javadoc.Javadoc$Deprecated$Builder
+public class org.tomitribe.crest.javadoc.Javadoc$Deprecated$Builder
+  private field content : java.lang.String
+  method <init>()
+  public method content(java.lang.String content) : org.tomitribe.crest.javadoc.Javadoc$Deprecated$Builder
+  public method build() : org.tomitribe.crest.javadoc.Javadoc$Deprecated
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.javadoc.Javadoc$Since
+public class org.tomitribe.crest.javadoc.Javadoc$Since
+  private final field content : java.lang.String
+  method <init>(java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Since$Builder
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Option
+public class org.tomitribe.crest.help.Option
+implements org.tomitribe.crest.help.Element
+  private final field flag : java.lang.String
+  private final field document : org.tomitribe.crest.help.Document
+  public method <init>(java.lang.String flag, org.tomitribe.crest.help.Document document)
+  public method getFlag() : java.lang.String
+  public method getDocument() : org.tomitribe.crest.help.Document
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.Document$Builder
+public class org.tomitribe.crest.help.Document$Builder
+  final field elements : java.util.List<org.tomitribe.crest.help.Element>
+  public method <init>()
+  public method paragraph(java.lang.String content) : org.tomitribe.crest.help.Document$Builder
+  public method bullet(java.lang.String content) : org.tomitribe.crest.help.Document$Builder
+  public method preformatted(java.lang.String content) : org.tomitribe.crest.help.Document$Builder
+  public method heading(java.lang.String content) : org.tomitribe.crest.help.Document$Builder
+  public method inline(org.tomitribe.crest.help.Document document) : org.tomitribe.crest.help.Document$Builder
+  public method element(org.tomitribe.crest.help.Element element) : org.tomitribe.crest.help.Document$Builder
+  public method build() : org.tomitribe.crest.help.Document
+
+# org.tomitribe.crest.help.IllegalElementException
+public class org.tomitribe.crest.help.IllegalElementException extends java.lang.RuntimeException
+  public method <init>(java.lang.String s, javax.lang.model.element.ExecutableElement executableElement)
+  public method <init>(java.lang.String s, javax.lang.model.element.ExecutableElement executableElement, java.lang.Throwable t)
+
+# org.tomitribe.crest.help.HelpProcessor
+public class org.tomitribe.crest.help.HelpProcessor extends javax.annotation.processing.AbstractProcessor
+@com.google.auto.service.AutoService
+  public method <init>()
+  public method getSupportedAnnotationTypes() : void
+  public method process(java.util.Set<? extends javax.lang.model.element.TypeElement> annotations, javax.annotation.processing.RoundEnvironment roundEnv) : void
+  private method writeAll(java.util.List<org.tomitribe.crest.help.CommandJavadoc> list) : void
+  private method processCommand(javax.lang.model.element.ExecutableElement executableElement) : org.tomitribe.crest.help.CommandJavadoc
+  private method storeProperties(java.lang.String resourceFile, java.util.Properties properties) : void
+  private method getCommandName(javax.lang.model.element.ExecutableElement executableElement) : java.lang.String
+
+# org.tomitribe.crest.cmds.OverloadedCmdMethod
+public class org.tomitribe.crest.cmds.OverloadedCmdMethod
+implements org.tomitribe.crest.cmds.Cmd
+  private final field name : java.lang.String
+  private final field methods : java.util.Set<org.tomitribe.crest.cmds.CmdMethod>
+  public method <init>(java.lang.String name)
+  public method getMethods() : void
+  public method getUsage() : java.lang.String
+  public method getName() : java.lang.String
+  public method exec(java.util.Map<java.lang.Class<?>, org.tomitribe.crest.interceptor.internal.InternalInterceptor> globalInterceptors, java.lang.String[] rawArgs) : void
+  public method help(java.io.PrintStream out) : void
+  public method add(org.tomitribe.crest.cmds.CmdMethod cmd) : void
+  public method complete(java.lang.String buffer, int cursorPosition) : void
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$9
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$9 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.table.Line$1
+class org.tomitribe.crest.table.Line$1
+
+# org.tomitribe.crest.javadoc.Javadoc$Tag
+public class org.tomitribe.crest.javadoc.Javadoc$Tag
+  private final field name : java.lang.String
+  private final field content : java.lang.String
+  method <init>(java.lang.String name, java.lang.String content)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Tag$Builder
+  public method getName() : java.lang.String
+  public method getContent() : java.lang.String
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.CommandJavadoc
+public class org.tomitribe.crest.help.CommandJavadoc
+  private final field clazzName : java.lang.String
+  private final field commandName : java.lang.String
+  private final field properties : java.util.Properties
+  public method <init>(java.lang.String clazzName, java.lang.String commandName)
+  public method setJavadoc(java.lang.String javadoc) : void
+  public method getJavadoc() : java.lang.String
+  public method setArgNames(java.util.List<java.lang.String> argNames) : void
+  public method getArgNames() : void
+  public method setArgTypes(java.util.List<java.lang.String> argTypes) : void
+  public method matches(java.lang.Class<?>[] types) : void
+  public method classSignature(java.lang.Class<?> aClass) : void
+  public method getClazzName() : java.lang.String
+  public method getCommandName() : java.lang.String
+  public method getProperties() : java.util.Properties
+  public method getName() : java.lang.String
+  public method getResourceFileName(int i) : java.lang.String
+  public static method getResourceFileName(java.lang.String clazzName, java.lang.String commandName, int i) : java.lang.String
+  public static method loadJavadoc(java.lang.Class clazz, java.lang.String commandName) : void
+  public static method loadJavadoc(java.lang.String clazzName, java.lang.String commandName) : void
+  public static method getCommandJavadocs(java.lang.reflect.Method method, java.lang.String name) : org.tomitribe.crest.help.CommandJavadoc
+
+# org.tomitribe.crest.val.BeanValidation
+public class org.tomitribe.crest.val.BeanValidation
+  private static final field IMPL : org.tomitribe.crest.val.BeanValidation$BeanValidationImpl
+  private method <init>()
+  public static method isActive() : boolean
+  public static method validateParameters(java.lang.Object instance, java.lang.reflect.Method method, java.lang.Object[] parameters) : void
+    declares java.lang.Exception
+  public static method validateParameters(java.lang.reflect.Constructor constructor, java.lang.Object[] parameters) : void
+    declares java.lang.Exception
+  public static method messages(java.lang.Exception e) : void
+
+# org.tomitribe.crest.cmds.CmdGroup$1
+class org.tomitribe.crest.cmds.CmdGroup$1
+implements java.util.Comparator
+  method <init>(org.tomitribe.crest.cmds.CmdGroup this$0)
+  public method compare(java.lang.String s1, java.lang.String s2) : int
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+public abstract enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field BOOLEAN : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field BYTE : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field CHAR : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field CHARACTER : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field LONG : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field FLOAT : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field INT : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field DOUBLE : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static final field SHORT : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  public static method values() : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes[]
+  public static method valueOf(java.lang.String name) : org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  private method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+  public static method fromWrapper(java.lang.Class<?> wrapper) : void
+
+# org.tomitribe.crest.cmds.CommandFailedException
+public class org.tomitribe.crest.cmds.CommandFailedException extends java.lang.RuntimeException
+  private final field name : java.lang.String
+  public method <init>(java.lang.Throwable cause, java.lang.String name)
+  public method getName() : java.lang.String
+
+# org.tomitribe.crest.table.Table
+public class org.tomitribe.crest.table.Table
+  private final field data : org.tomitribe.crest.table.Data
+  private final field border : org.tomitribe.crest.table.Border
+  public method <init>(org.tomitribe.crest.table.Data data, org.tomitribe.crest.table.Border border, int width)
+  public method format() : java.lang.String
+  public method format(java.io.PrintStream out) : void
+  private method center(java.lang.String[] strings) : java.lang.String[]
+  public method getFormat(org.tomitribe.crest.table.Line line) : java.lang.String
+  public method getLine(org.tomitribe.crest.table.Line line) : java.lang.String
+  private method rowOf(java.lang.String string) : java.lang.String[]
+  private method columnOf(org.tomitribe.crest.table.Data$Column column, java.lang.String string) : java.lang.String
+
+# org.tomitribe.crest.table.Tables
+public class org.tomitribe.crest.table.Tables
+  private method <init>()
+  static method getMaxWidth(java.lang.String[][] data) : int
+  static method createCells(org.tomitribe.crest.table.Data table, java.lang.String[][] data) : org.tomitribe.crest.table.Data$Cell[][]
+  static method createRows(org.tomitribe.crest.table.Data table, org.tomitribe.crest.table.Data$Cell[][] cells) : org.tomitribe.crest.table.Data$Row[]
+  private static method createRow(org.tomitribe.crest.table.Data table, org.tomitribe.crest.table.Data$Cell[][] cells, int row) : org.tomitribe.crest.table.Data$Row
+  static method createColumns(org.tomitribe.crest.table.Data table, org.tomitribe.crest.table.Data$Cell[][] cells) : org.tomitribe.crest.table.Data$Column[]
+  private static method createColumn(org.tomitribe.crest.table.Data table, org.tomitribe.crest.table.Data$Cell[][] cells, int column) : org.tomitribe.crest.table.Data$Column
+  public static method cellsInRow(org.tomitribe.crest.table.Data$Cell[][] cells, int row) : void
+  public static method cellsInColumn(org.tomitribe.crest.table.Data$Cell[][] cells, int column) : void
+
+# org.tomitribe.crest.javadoc.JavadocParser$Pair
+public class org.tomitribe.crest.javadoc.JavadocParser$Pair
+implements java.util.Map$Entry
+  private final field key : java.lang.String
+  private final field value : java.lang.String
+  method <init>(java.lang.String key, java.lang.String value)
+  public method getKey() : java.lang.String
+  public method getValue() : java.lang.String
+  public method setValue(java.lang.String value) : java.lang.String
+
+# org.tomitribe.crest.help.DocumentParser$1
+class org.tomitribe.crest.help.DocumentParser$1
+
+# org.tomitribe.crest.help.DocumentParser
+public class org.tomitribe.crest.help.DocumentParser
+  private final field content : java.lang.String
+  private final field leadingSpaces : java.util.regex.Pattern
+  private final field bullet : java.util.regex.Pattern
+  private final field heading : java.util.regex.Pattern
+  private final field preformatted : java.util.regex.Pattern
+  private final field doc : org.tomitribe.crest.help.Document$Builder
+  private field state : org.tomitribe.crest.help.DocumentParser$State
+  public method <init>(java.lang.String content)
+  public static method parser(java.lang.String content) : org.tomitribe.crest.help.Document
+  public static method parseOptionDescription(java.lang.String description) : org.tomitribe.crest.help.Document
+  private static method convertHeaders(org.tomitribe.crest.help.Element element) : org.tomitribe.crest.help.Element
+  private method parse() : org.tomitribe.crest.help.Document
+  private method normalizeAndSplitContent() : void
+  private method processPreformatted(java.lang.String line) : boolean
+  private method processTerminator(java.lang.String line) : boolean
+  private method processParagraph(java.lang.String line) : void
+  private method processHeader(java.lang.String line) : boolean
+  private method processBullet(java.lang.String line) : boolean
+  private method terminate() : void
+  private method stripIndent(java.util.List<java.lang.String> lines) : void
+  private method getIndent(java.util.List<java.lang.String> lines) : void
+
+# org.tomitribe.crest.val.BeanValidation$BeanValidationImpl
+public interface org.tomitribe.crest.val.BeanValidation$BeanValidationImpl
+  public method validateParameters(java.lang.Object arg0, java.lang.reflect.Method arg1, java.lang.Object[] arg2) : void
+  public method validateParameters(java.lang.reflect.Constructor arg0, java.lang.Object[] arg1) : void
+
+# org.tomitribe.crest.cmds.CmdMethod$Spec
+public class org.tomitribe.crest.cmds.CmdMethod$Spec
+  private final field options : java.util.Map<java.lang.String, org.tomitribe.crest.cmds.processors.OptionParam>
+  private final field aliases : java.util.Map<java.lang.String, org.tomitribe.crest.cmds.processors.OptionParam>
+  private final field arguments : java.util.List<org.tomitribe.crest.cmds.processors.Param>
+  public method <init>(org.tomitribe.crest.cmds.CmdMethod this$0)
+  public method getOptions() : void
+  public method getAliases() : void
+  public method getArguments() : void
+
+# org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$5
+final enum org.tomitribe.crest.cmds.processors.types.PrimitiveTypes$5 extends org.tomitribe.crest.cmds.processors.types.PrimitiveTypes
+  method <init>(java.lang.String arg0, int arg1)
+  public method getDefaultValue() : java.lang.String
+  public method getWraper() : void
+
+# org.tomitribe.crest.cmds.CmdMethod$3
+class org.tomitribe.crest.cmds.CmdMethod$3
+implements org.tomitribe.crest.api.interceptor.ParameterMetadata
+  method <init>(org.tomitribe.crest.cmds.CmdMethod this$0, org.tomitribe.crest.api.interceptor.ParameterMetadata$ParamType arg1, java.lang.String arg2, java.util.List arg3, org.tomitribe.crest.cmds.processors.Param arg4)
+  public method getType() : org.tomitribe.crest.api.interceptor.ParameterMetadata$ParamType
+  public method getName() : java.lang.String
+  public method getNested() : void
+  public method getReflectType() : java.lang.reflect.Type
+  public method isListable() : boolean
+  public method getComponentType() : void
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.table.Line
+public class org.tomitribe.crest.table.Line
+  private final field left : java.lang.String
+  private final field right : java.lang.String
+  private final field inner : java.lang.String
+  private final field middle : java.lang.String
+  public method <init>(java.lang.String left, java.lang.String right, java.lang.String inner, java.lang.String middle)
+  public method getLeft() : java.lang.String
+  public method getRight() : java.lang.String
+  public method getMiddle() : java.lang.String
+  public method getInner() : java.lang.String
+  public static method builder() : org.tomitribe.crest.table.Line$Builder
+
+# org.tomitribe.crest.javadoc.Javadoc
+public class org.tomitribe.crest.javadoc.Javadoc
+  private final field content : java.lang.String
+  private final field params : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Param>
+  private final field throwing : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Throws>
+  private final field authors : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Author>
+  private final field sees : java.util.List<org.tomitribe.crest.javadoc.Javadoc$See>
+  private final field unknown : java.util.List<org.tomitribe.crest.javadoc.Javadoc$Tag>
+  private final field aReturn : org.tomitribe.crest.javadoc.Javadoc$Return
+  private final field since : org.tomitribe.crest.javadoc.Javadoc$Since
+  private final field version : org.tomitribe.crest.javadoc.Javadoc$Version
+  private final field deprecated : org.tomitribe.crest.javadoc.Javadoc$Deprecated
+  method <init>(java.lang.String content, java.util.List<org.tomitribe.crest.javadoc.Javadoc$Param> params, java.util.List<org.tomitribe.crest.javadoc.Javadoc$Throws> throwing, java.util.List<org.tomitribe.crest.javadoc.Javadoc$Author> authors, java.util.List<org.tomitribe.crest.javadoc.Javadoc$See> sees, java.util.List<org.tomitribe.crest.javadoc.Javadoc$Tag> unknown, org.tomitribe.crest.javadoc.Javadoc$Return aReturn, org.tomitribe.crest.javadoc.Javadoc$Since since, org.tomitribe.crest.javadoc.Javadoc$Deprecated deprecated, org.tomitribe.crest.javadoc.Javadoc$Version version)
+  public static method builder() : org.tomitribe.crest.javadoc.Javadoc$Builder
+  public method getParametersByName() : void
+  public method getUnknown() : void
+  public method getDeprecated() : org.tomitribe.crest.javadoc.Javadoc$Deprecated
+  public method getContent() : java.lang.String
+  public method getParams() : void
+  public method getThrowing() : void
+  public method getAuthors() : void
+  public method getSees() : void
+  public method getReturn() : org.tomitribe.crest.javadoc.Javadoc$Return
+  public method getSince() : org.tomitribe.crest.javadoc.Javadoc$Since
+  public method getVersion() : org.tomitribe.crest.javadoc.Javadoc$Version
+  public method toString() : java.lang.String
+
+# org.tomitribe.crest.help.DocumentFormatter
+public class org.tomitribe.crest.help.DocumentFormatter
+  private final field margin : java.lang.String
+  private final field width : int
+  private final field column : int
+  private final field color : boolean
+  public method <init>(int width)
+  public method <init>(int width, boolean color)
+  public method format(org.tomitribe.crest.help.Document document) : java.lang.String
+  public static method getOptions(org.tomitribe.crest.help.Document document) : void
+
+# resources
+META-INF/MANIFEST.MF
+ValidationMessages_en.properties
+ValidationMessages_pt_BR.properties
+META-INF/maven/org.tomitribe/tomitribe-crest/pom.xml
+META-INF/LICENSE
+META-INF/services/javax.annotation.processing.Processor
+META-INF/maven/org.tomitribe/tomitribe-crest/pom.properties
+ValidationMessages.properties
+META-INF/NOTICE
